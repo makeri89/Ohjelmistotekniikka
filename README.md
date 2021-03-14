@@ -1,9 +1,13 @@
 # Ohjelmistotekniikan harjoitustyö
 
-### Tähän repositorioon valmistuu harjoitustyö *Ohjelmistotekniikka*-kurssin harjoitustyö käyttäen Pythonia!
+### Tähän repositorioon valmistuu *Ohjelmistotekniikka*-kurssin harjoitustyö sekä kurssin laskarien tehtävät!
 
-Tällä hetkellä repositorio sisältää vasta ensimmäisen viikon **laskarien** tehtävät
+**Laskarit**
 
-[komentorivi.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/komentorivi.txt)
+- Viikko 1:
 
-[gitlog.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/gitlog.txt)
+  - [komentorivi.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/komentorivi.txt)
+
+  - [gitlog.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/gitlog.txt)
+
+Harjoitustyön kieli tulee olemaan **Python**.
