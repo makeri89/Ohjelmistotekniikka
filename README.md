@@ -2,7 +2,7 @@
 
 ### Tähän repositorioon valmistuu *Ohjelmistotekniikka*-kurssin harjoitustyö sekä kurssin laskarien tehtävät!
 
-##### Laskarit
+#### Laskarit
 
 - Viikko 1:
 
