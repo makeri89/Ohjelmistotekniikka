@@ -1,0 +1,99 @@
+$ git log --stat | cat
+commit 220bd4e846de9162e78dac3b5e6787a5d8b3559f
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:49:33 2021 +0200
+
+    kaikki tehty
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e3664c996beae4822ac758c7cf3f8d5ec84e8611
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:47:18 2021 +0200
+
+    tiedostoja kansio
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d029bcc2e5de03dd3f347c2a4dc4d6ce187238bb
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:44:02 2021 +0200
+
+    muokkauksia, lisäys git add -p
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit d0b52b9f8a8dc05a9254ae2293dcc1b7f0fec4da
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:42:11 2021 +0200
+
+    git käsittelee uudelleennimeämisen poistona ja uutena tiedostona
+
+ tiedosto.txt => eka.txt | 0
+ toinen.txt              | 1 -
+ 2 files changed, 1 deletion(-)
+
+commit 3e063dd7e8a06b7e4c994cf6b6950b9ab74586a6
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:40:25 2021 +0200
+
+    poistettu ja lisätty tekstiä
+
+ tiedosto.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 5448a9d338d28229c08c333e74091a631f862cf0
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:38:40 2021 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 24 +++++++++++++++++++++++-
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+
+commit e51f0bbd2a9c232a58153a888f162ad8be4ed09e
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:34:21 2021 +0200
+
+    stuff kansio
+
+ kolmas.txt     | 1 +
+ stuff/joku.txt | 0
+ toinen.txt     | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit da85ce766a1bbccab7035f25ecd32f1b5555c1ec
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:32:42 2021 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d4c7e716cec1da6ba44c4d9d7d1cc71e8707f561
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:31:51 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit bcede386ae56ef583a093d09ef77c51782a59e45
+Author: Markus Kaihola <makeri89@hotmail.com>
+Date:   Sun Mar 14 17:29:21 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
