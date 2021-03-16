@@ -6,10 +6,10 @@
 
 - Viikko 1:
 
-  - [komentorivi.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/komentorivi.txt)
+  - [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
 
-  - [gitlog.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/gitlog.txt)
+  - [gitlog.txt](/laskarit/viikko1/gitlog.txt)
 
-Harjoitustyön aiheena on minigolf-peli, joka toteutetaan Pythonilla käyttäen Pygamea.
+Harjoitustyön aiheena on minigolf-peli, joka toteutetaan Pythonilla käyttäen Pygamea. Pelin toteutus alkaa [vaatimusmäärittelyllä](/dokumentaatio/vaatimusmaarittely.md)
 
-Harjoitustyöhön käytettyjen tuntien kirjanpito löytyy [täältä](/dokumentaatio/tyoaikakirjanpito.md)
+Harjoitustyöhön käytettyjen tuntien kirjanpito löytyy [täältä](/dokumentaatio/tyoaikakirjanpito.md).
