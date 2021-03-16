@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Käyttäjä voi pelata simppliä 2D-minigolfia, joka on ulkonäöltään jo alasajetun Aapeli-pelisivuston Minigolfin kaltainen.
+Käyttäjä voi pelata simppeliä 2D-minigolfia, joka on ulkonäöltään jo alasajetun Aapeli-pelisivuston Minigolfin kaltainen.
 
 ## Pelaajat
 
