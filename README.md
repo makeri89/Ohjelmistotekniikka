@@ -10,4 +10,6 @@
 
   - [gitlog.txt](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/laskarit/viikko1/gitlog.txt)
 
-Harjoitustyön kieli tulee olemaan **Python**.
+Harjoitustyön aiheena on minigolf-peli, joka toteutetaan Pythonilla käyttäen Pygamea.
+
+Harjoitustyöhön käytettyjen tuntien kirjanpito löytyy [täältä](/dokumentaatio/tyoaikakirjanpito.md)
