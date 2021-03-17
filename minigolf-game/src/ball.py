@@ -27,5 +27,5 @@ class Ball(pygame.sprite.Sprite):
         self.rect.x = _x
         self.rect.y = _y
 
-    def update(self):
+    def update(self, new_x, new_y):
         pass

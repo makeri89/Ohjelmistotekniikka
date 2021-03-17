@@ -4,7 +4,7 @@ import pygame
 dirname = os.path.dirname(__file__)
 
 
-class DarkSand(pygame.sprite.Sprite):
+class Hole(pygame.sprite.Sprite):
     """
     A class for the hole.
     """

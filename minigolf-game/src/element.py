@@ -3,7 +3,7 @@ import pygame
 
 dirname = os.path.dirname(__file__)
 
-element_images = {2: 'grass.png', 3: 'water.png',
+element_images = {0: 'hole.png', 1: 'wall.png', 2: 'grass.png', 3: 'water.png',
                   4: 'lightsand.png', 5: 'darksand.png'}
 
 
@@ -23,7 +23,7 @@ class Element(pygame.sprite.Sprite):
         """
         super().__init__()
         self.image = pygame.image.load(os.path.join(
-            dirname, '../../assets/field', element_images[elem]))
+            dirname, 'assets/field', element_images[elem]))
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
