@@ -12,3 +12,6 @@ def lint(ctx):
 def pep(ctx):
     ctx.run('autopep8 --in-place --recursive src')
     
+@task
+def run(ctx):
+    ctx.run('python3 src/index.py')

@@ -57,3 +57,11 @@ class Field:
 
         self.all_elements.add(self.holes, self.walls, self.water,
                               self.grass, self.light_sand, self.dark_sand)
+
+    def check_wall_hits(self, ball):
+        contact = pygame.sprite.spritecollideany(ball, self.walls)
+        return contact
+
+    def check_water_hits(self, ball):
+        contact = pygame.sprite.spritecollideany(ball, self.water)
+        return contact
