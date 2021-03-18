@@ -26,3 +26,4 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
+        

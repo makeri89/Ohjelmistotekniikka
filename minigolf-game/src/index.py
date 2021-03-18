@@ -23,5 +23,5 @@ def main():
     game = Game(ball, clock, field, display)
     game.run()
 
-
-main()
+if __name__ == '__main__':
+    main()

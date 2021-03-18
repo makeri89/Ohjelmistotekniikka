@@ -3,7 +3,7 @@ from element import Element
 
 
 class Field:
-    """A class for creating the field
+    """A class for creating the field.
 
     Attributes:
         place_elements: A method to place the elements on the map.

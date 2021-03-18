@@ -1,6 +1,7 @@
 import sys
 import math
 import pygame
+from renderer import Renderer
 
 
 class Game:
@@ -34,6 +35,10 @@ class Game:
         self.total_trip = 0
         self.shot_power = 0
         self.moves_amount = 0
+        self.ball_x = self.ball.rect.x
+        self.ball_y = self.ball.rect.y
+        
+        self.renderer = Renderer(self.display, self.field, self.ball_group)
 
     def run(self):
         """Loop that stops when manually exited or the ball goes to the hole.
@@ -46,26 +51,24 @@ class Game:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    sys.exit()
+                    # sys.exit()
+                    pygame.quit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # a new shot can only be hit when the ball is stopped
                     if not self.x_speed and not self.y_speed:
                         self.handle_shot()
-                        
+
             self.move_ball()
             self.water_hit()
+            self.wall_hit()
             self.in_hole()
 
-            self.field.all_elements.draw(self.display)
-            self.ball_group.draw(self.display)
-            
-            pygame.display.update()
-            
+            self.renderer.render()
             self.clock.tick(60)
 
     def handle_shot(self):
-        """A method to handle the shot. 
-        
+        """A method to handle the shot.
+
         Sets ball speed and shot power.
         The total trip needs to be reset on every shot in order to calculate the shot distance.
         """
@@ -87,13 +90,6 @@ class Game:
         """
         self.x_moves += abs(self.x_speed)*100
         self.y_moves += abs(self.y_speed)*100
-
-        wall_hit = self.field.check_wall_hits(self.ball)
-        # water_hit = self.field.check_water_hits(self.ball)
-
-        if wall_hit:
-            self.x_speed = -self.x_speed
-            self.y_speed = -self.y_speed
 
         if self.x_moves > 10000:
             if self.x_speed > 0:
@@ -123,8 +119,9 @@ class Game:
             self.ball, self.field.holes, False, pygame.sprite.collide_circle_ratio(0.3))
         if in_hole:
             print('you won')
-            sys.exit()
-            
+            # sys.exit()
+            pygame.quit()
+
     def water_hit(self):
         water_hit = self.field.check_water_hits(self.ball)
         if water_hit:
@@ -132,4 +129,9 @@ class Game:
             self.ball.rect.y = self.ball_y
             self.x_speed = 0
             self.y_speed = 0
-        
+            
+    def wall_hit(self):
+        wall_hit = self.field.check_wall_hits(self.ball)
+        if wall_hit:
+            self.x_speed = -self.x_speed
+            self.y_speed = -self.y_speed
