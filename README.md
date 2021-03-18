@@ -10,6 +10,8 @@
 
   - [gitlog.txt](/laskarit/viikko1/gitlog.txt)
 
+- [Viikko 2](/laskarit/viikko2)
+
 #### Harjoitustyö
 
 Harjoitustyön aiheena on minigolf-peli, joka toteutetaan Pythonilla käyttäen Pygamea. Pelin toteutus alkaa [vaatimusmäärittelyllä](/dokumentaatio/vaatimusmaarittely.md)
