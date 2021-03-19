@@ -14,7 +14,7 @@ def lint(ctx):
     
 @task
 def start(ctx):
-    ctx.run('python3 src/index.py')
+    ctx.run('python3 src/menu.py')
     
 @task
 def test(ctx):

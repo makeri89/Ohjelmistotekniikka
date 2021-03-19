@@ -8,7 +8,8 @@ class Ball(pygame.sprite.Sprite):
     """Class for the ball in the game
 
     Attributes:
-        update: Moves the ball
+        image: The image loaded from a file
+        rect: Pygame rect object attributes
     """
 
     def __init__(self, _x=0, _y=0, ball='blueball.png'):
@@ -26,4 +27,3 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
-        

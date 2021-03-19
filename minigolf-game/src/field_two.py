@@ -8,4 +8,5 @@ def get_field():
         field[i+4][26] = 1
         for j in range(42, 49):
             field[i][j] = 3
+    field[6][10] = 6
     return field

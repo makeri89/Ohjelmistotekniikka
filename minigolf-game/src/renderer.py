@@ -2,12 +2,20 @@ import pygame
 
 
 class Renderer:
-    def __init__(self, display, field, ball):
-        self.display = display
-        self.field = field
-        self.ball = ball
-        
+    """A class to handle rendering in pygame.
+    """
+    def __init__(self, display, field):
+        """A constuctor that sets the pygame display and the field.
+
+        Args:
+            display: Pygame display
+            field: A Field class object containing sprites
+        """
+        self._display = display
+        self._field = field
+
     def render(self):
-        self.field.all_elements.draw(self.display)
-        self.ball.draw(self.display)
-        pygame.display.update()
+        """A method to update all of the sprites on the field.
+        """
+        self._field.update(self._display)
+        # pygame.display.update()
