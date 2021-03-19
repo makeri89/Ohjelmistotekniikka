@@ -8,6 +8,9 @@ on:
 jobs:
   deployment_pipeline:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: minigolf-game
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -16,3 +19,5 @@ jobs:
       - uses: Gr1N/setup-poetry@v4
       - name: check poetry installation
         run: poetry --version
+      - name: run tests
+        run: poetry run invoke test
