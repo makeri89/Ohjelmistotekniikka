@@ -94,8 +94,23 @@ class BallHandler:
 
     def wall_hit(self):
         """A method to bounce the ball off walls.
+        
+        Checks the outer walls manually.
         """
         wall_hit = self.field.check_wall_hits()
-        if wall_hit:
+        height, width = self.field.get_dimensions()
+        if self.ball.rect.x == 15 or self.ball.rect.x == width-28:
             self.x_speed = -self.x_speed
+        if self.ball.rect.y == 15 or self.ball.rect.y == height-28:
             self.y_speed = -self.y_speed
+        # for i in wall_hit:
+        #     print(i.rect)
+        # if wall_hit:
+        #     self.x_speed = -self.x_speed
+        #     self.y_speed = -self.y_speed
+        if wall_hit:
+            print(wall_hit[0].rect, self.ball.rect)
+            if wall_hit[0].rect.x == self.ball.rect.x+12:
+                self.x_speed = -self.x_speed
+            if wall_hit[0].rect.y == self.ball.rect.y+12:
+                self.y_speed = -self.y_speed

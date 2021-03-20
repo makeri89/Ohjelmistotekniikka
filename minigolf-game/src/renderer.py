@@ -18,4 +18,4 @@ class Renderer:
         """A method to update all of the sprites on the field.
         """
         self._field.update(self._display)
-        # pygame.display.update()
+        pygame.display.update()

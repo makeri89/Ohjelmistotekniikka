@@ -1,4 +1,4 @@
-import pygame
+import sys, pygame
 from element import Element
 from ball import Ball
 
@@ -81,6 +81,9 @@ class Field:
     
     def get_holes(self):
         return self._holes
+    
+    def get_dimensions(self):
+        return self._height*self.__cell_size, self._width*self.__cell_size
 
     def update(self, display):
         """Updates all sprites in the class
@@ -88,7 +91,10 @@ class Field:
         Args:
             display: The current pygame screen
         """
-        self._all_elements.update(display)
+        try:
+            self._all_elements.draw(display)
+        except pygame.error:
+            pass
 
     def check_wall_hits(self):
         """Checks if the ball has hit the wall
@@ -108,13 +114,14 @@ class Field:
         contact = pygame.sprite.spritecollideany(self._ball, self._water)
         return contact
     
-    # def in_hole(self):
-    #     """A method to check if the hole ands the ball are colliding.
+    def in_hole(self):
+        """A method to check if the hole ands the ball are colliding.
 
-    #     Uses a circle ratio instead of the default rectangle.
-    #     """
-    #     in_hole = pygame.sprite.spritecollide(
-    #         self._ball, self._holes, False, pygame.sprite.collide_circle_ratio(0.3))
-    #     if in_hole:
-    #         print('you won')
-    #         pygame.quit()
+        Uses a circle ratio instead of the default rectangle.
+        """
+        in_hole = pygame.sprite.spritecollide(
+            self._ball, self._holes, False, pygame.sprite.collide_circle_ratio(0.3))
+        if in_hole:
+            print('you won')
+            pygame.quit()
+            # sys.exit()

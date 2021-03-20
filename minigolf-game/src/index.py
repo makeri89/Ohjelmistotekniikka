@@ -1,3 +1,5 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 from field import Field
 from clock import Clock
@@ -25,14 +27,12 @@ def main():
     display = pygame.display.set_mode((width*CELL_SIZE, height*CELL_SIZE))
     field = Field(field_map)
     clock = Clock()
-    # renderer = Renderer(display, field)
-    renderer = 0
-    # ball = field.get_ball()
-    # ball_handler = BallHandler(ball, field)
+    renderer = Renderer(display, field)
+    ball = field.get_ball()
+    ball_handler = BallHandler(ball, field)
 
-    game = Game(clock, field, display, renderer, 0)
+    game = Game(clock, field, display, renderer, ball_handler)
     game.run()
-
 
 if __name__ == '__main__':
     main()

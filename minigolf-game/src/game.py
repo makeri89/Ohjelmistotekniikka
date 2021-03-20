@@ -1,4 +1,4 @@
-import pygame
+import sys, pygame
 from renderer import Renderer
 from ball_handler import BallHandler
 
@@ -23,8 +23,8 @@ class Game:
         self.field = field
         self.display = display
         
-        self.renderer = Renderer(self.display, self.field)
-        self.ball_handler = BallHandler(self.field.get_ball(), self.field)
+        self.renderer = renderer
+        self.ball_handler = ball_handler
 
     def run(self):
         """Loop that stops when manually exited or the ball goes to the hole.
@@ -38,11 +38,12 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    sys.exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.ball_handler.handle_shot()
 
             self.ball_handler.move_ball()
-            self.in_hole()
+            self.field.in_hole()
 
             self.renderer.render()
             self.clock.tick(60)
@@ -57,3 +58,4 @@ class Game:
         if in_hole:
             print('you won')
             pygame.quit()
+            sys.exit()
