@@ -1,17 +1,18 @@
-from tkinter import Tk, ttk
-from index import main as start_game
+from tkinter import ttk
 
 
-class UI:
+class Menu:
     """A class for the main menu from where you can start a new game.
     """
-    def __init__(self, root):
+
+    def __init__(self, root, start_game):
         """A constructor to set the UI root
 
         Args:
             root: Tk window
         """
         self.root = root
+        self.start_game = start_game
 
     def start(self):
         """A method to set the windows elements.
@@ -30,14 +31,4 @@ class UI:
     def handle_click(self):
         """Starts the game when called.
         """
-        start_game()
-
-
-window = Tk()
-window.title('Main menu')
-window['bg'] = '#13a713'
-
-ui = UI(window)
-ui.start()
-
-window.mainloop()
+        self.start_game()

@@ -10,7 +10,7 @@ element_images = {0: 'hole.png', 1: 'wall.png', 2: 'grass.png', 3: 'water.png',
 class Element(pygame.sprite.Sprite):
     """
     A class for different elements on the field.
-    
+
     Attributes:
         image: The image loaded from a file
         rect: Pygame rect object attributes
@@ -27,7 +27,7 @@ class Element(pygame.sprite.Sprite):
         """
         super().__init__()
         self.image = pygame.image.load(os.path.join(
-            dirname, 'assets/field', element_images[elem]))
+            dirname, '../assets/field', element_images[elem]))
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y

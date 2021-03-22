@@ -1,6 +1,7 @@
-import sys, pygame
-from element import Element
-from ball import Ball
+import sys
+import pygame
+from field_elements.element import Element
+from field_elements.ball import Ball
 
 
 class Field:
@@ -78,10 +79,10 @@ class Field:
             Ball: The ball sprite object
         """
         return self._ball
-    
+
     def get_holes(self):
         return self._holes
-    
+
     def get_dimensions(self):
         return self._height*self.__cell_size, self._width*self.__cell_size
 
@@ -102,7 +103,8 @@ class Field:
         Returns:
             If there is contact, it returns the ball, else None.
         """
-        contact = pygame.sprite.spritecollide(self._ball, self._walls, dokill=False)
+        contact = pygame.sprite.spritecollide(
+            self._ball, self._walls, dokill=False)
         return contact
 
     def check_water_hits(self):
@@ -113,7 +115,7 @@ class Field:
         """
         contact = pygame.sprite.spritecollideany(self._ball, self._water)
         return contact
-    
+
     def in_hole(self):
         """A method to check if the hole ands the ball are colliding.
 
@@ -124,4 +126,4 @@ class Field:
         if in_hole:
             print('you won')
             pygame.quit()
-            # sys.exit()
+            sys.exit()

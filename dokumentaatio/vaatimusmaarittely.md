@@ -28,7 +28,7 @@ Pelikentiltä voi löytyä seuraavia elementtejä:
 
 Kun pelin perusversio yksinpelillä on saatu toimivaksi, voidaan peliä laajentaa lisäämällä siihen esimerkiksi
 - moninpeli
-- omien tasojen luomiseen pelaajille
-- eri vaikeustason kenttäkokonaisuuksien pelaamiseen
+- mahdollisuus omien tasojen luomiseen pelaajille
+- mahdollisuus eri vaikeustason kenttäkokonaisuuksien pelaamiseen
 - turnaukset
 - 3D pinnanmuotojen jäljittely hitaiden ja nopeiden osuuksien avulla

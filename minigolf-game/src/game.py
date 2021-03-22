@@ -1,6 +1,5 @@
-import sys, pygame
-from renderer import Renderer
-from ball_handler import BallHandler
+import sys
+import pygame
 
 
 class Game:
@@ -14,7 +13,6 @@ class Game:
         """Constructor that sets the required objects to run the game.
 
         Args:
-            ball: Ball sprite to be hit.
             clock: Clock ticking enables the ball to be animated.
             field: Field class object that contains the elements of the field.
             display: Pygame display that has its size set already.
@@ -22,7 +20,7 @@ class Game:
         self.clock = clock
         self.field = field
         self.display = display
-        
+
         self.renderer = renderer
         self.ball_handler = ball_handler
 
@@ -34,28 +32,22 @@ class Game:
 
         On a shot, the shot power is set to double the distance from the ball to the mouse position.
         """
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    self.ball_handler.handle_shot()
+        running = True
+        while running:
+            try:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        self.ball_handler.handle_shot()
+            except pygame.error:
+                running = False
+                pygame.quit()
+                sys.exit()
 
             self.ball_handler.move_ball()
             self.field.in_hole()
 
             self.renderer.render()
             self.clock.tick(60)
-
-    def in_hole(self):
-        """A method to check if the hole ands the ball are colliding.
-
-        Uses a circle ratio instead of the default rectangle.
-        """
-        in_hole = pygame.sprite.spritecollide(
-            self.field.get_ball(), self.field.get_holes(), False, pygame.sprite.collide_circle_ratio(0.3))
-        if in_hole:
-            print('you won')
-            pygame.quit()
-            sys.exit()

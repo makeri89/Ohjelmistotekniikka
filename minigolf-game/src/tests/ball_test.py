@@ -1,5 +1,5 @@
 import unittest
-from ball import Ball
+from field_elements.ball import Ball
 
 
 class TestBall(unittest.TestCase):

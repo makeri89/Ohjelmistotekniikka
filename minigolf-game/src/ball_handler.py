@@ -14,7 +14,7 @@ class BallHandler:
         ball_x, ball_y: The coordinates of the ball before each shot
     """
 
-    def __init__(self, ball, field):
+    def __init__(self, ball, field, aim_line):
         """Constructor for the ball handling class that initializes the needed
         variables for moving the ball
 
@@ -24,6 +24,7 @@ class BallHandler:
         """
         self.ball = ball
         self.field = field
+        self.aim_line = aim_line
         self.x_speed = 0
         self.y_speed = 0
         self.x_moves = 0
@@ -94,7 +95,7 @@ class BallHandler:
 
     def wall_hit(self):
         """A method to bounce the ball off walls.
-        
+
         Checks the outer walls manually.
         """
         wall_hit = self.field.check_wall_hits()

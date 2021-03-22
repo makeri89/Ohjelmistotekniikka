@@ -1,5 +1,5 @@
 import unittest
-from field import Field
+from field_elements.field import Field
 
 field_map = [[1, 1, 1, 1, 1],
              [1, 6, 2, 3, 1],
