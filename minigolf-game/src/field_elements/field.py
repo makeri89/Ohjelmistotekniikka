@@ -83,6 +83,9 @@ class Field:
     def get_holes(self):
         return self._holes
 
+    def get_walls(self):
+        return self._walls
+
     def get_dimensions(self):
         return self._height*self.__cell_size, self._width*self.__cell_size
 

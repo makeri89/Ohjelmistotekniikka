@@ -32,8 +32,7 @@ class Game:
 
         On a shot, the shot power is set to double the distance from the ball to the mouse position.
         """
-        running = True
-        while running:
+        while True:
             try:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -42,7 +41,7 @@ class Game:
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         self.ball_handler.handle_shot()
             except pygame.error:
-                running = False
+                print('An error occurred :(')
                 pygame.quit()
                 sys.exit()
 

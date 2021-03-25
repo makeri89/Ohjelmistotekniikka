@@ -14,7 +14,7 @@ class BallHandler:
         ball_x, ball_y: The coordinates of the ball before each shot
     """
 
-    def __init__(self, ball, field, aim_line):
+    def __init__(self, ball, field, aim_line, walls):
         """Constructor for the ball handling class that initializes the needed
         variables for moving the ball
 
@@ -33,6 +33,7 @@ class BallHandler:
         self.shot_power = 0
         self.ball_x = self.ball.rect.x
         self.ball_y = self.ball.rect.y
+        self.walls = walls
 
     def handle_shot(self):
         """A method to handle the shot.
@@ -97,21 +98,48 @@ class BallHandler:
         """A method to bounce the ball off walls.
 
         Checks the outer walls manually.
+        One cell is 15x15 pixels and the ball is 13x13 pixels.
         """
         wall_hit = self.field.check_wall_hits()
         height, width = self.field.get_dimensions()
-        if self.ball.rect.x == 15 or self.ball.rect.x == width-28:
+        
+        ball_x = self.ball.rect.x
+        ball_y = self.ball.rect.y
+        
+        if ball_x == 15 or ball_x == width-28:
             self.x_speed = -self.x_speed
-        if self.ball.rect.y == 15 or self.ball.rect.y == height-28:
+        if ball_y == 15 or ball_y == height-28:
             self.y_speed = -self.y_speed
+            
+        if self.x_speed > 0:
+            for i in self.walls['left']:
+                if ball_x+13 in range(i[0]*15, i[0]*15+5) and ball_y in range((i[1]-1)*15, (i[2]+1)*15):
+                    self.x_speed = -self.x_speed
+                    # print('hit', self.ball.rect, i)
+        elif self.x_speed < 0:
+            for i in self.walls['right']:
+                if ball_x == i[0]*15 and ball_y in range((i[1]-1)*15, (i[2]+1)*15):
+                    self.x_speed = -self.x_speed
+                    
+        if self.y_speed > 0:
+            for i in self.walls['top']:
+                if ball_y+13 == i[0]*15 and ball_x in range((i[1]-1)*15, (i[2]+1)*15):
+                    self.y_speed = -self.y_speed
+        elif self.y_speed < 0:
+            for i in self.walls['bottom']:
+                if ball_y == i[0]*15 and ball_x in range((i[1]-1)*15, (i[2]+1)*15):
+                    self.y_speed = -self.y_speed
+            
+            
         # for i in wall_hit:
         #     print(i.rect)
         # if wall_hit:
         #     self.x_speed = -self.x_speed
         #     self.y_speed = -self.y_speed
-        if wall_hit:
-            print(wall_hit[0].rect, self.ball.rect)
-            if wall_hit[0].rect.x == self.ball.rect.x+12:
-                self.x_speed = -self.x_speed
-            if wall_hit[0].rect.y == self.ball.rect.y+12:
-                self.y_speed = -self.y_speed
+        # if wall_hit:
+        #     print(wall_hit[0].rect, self.ball.rect)
+        #     if wall_hit[0].rect.x == self.ball.rect.x+13:
+        #         self.x_speed = -self.x_speed
+        #     if wall_hit[0].rect.y == self.ball.rect.y+13:
+        #         self.y_speed = -self.y_speed
+        

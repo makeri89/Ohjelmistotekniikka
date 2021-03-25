@@ -13,6 +13,7 @@ class AimLine:
         """
         self.__display = display
         self.__color = (128, 0, 32)
+        self.line = None
 
     def draw_line(self, start_x, start_y, target):
         """A method to draw the line.
@@ -23,4 +24,5 @@ class AimLine:
             target: Mouse position
         """
         start = (start_x, start_y)
-        pygame.draw.line(self.__display, self.__color, start, target, 2)
+        self.line = pygame.draw.line(
+            self.__display, self.__color, start, target, 1)

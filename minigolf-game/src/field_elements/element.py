@@ -26,8 +26,9 @@ class Element(pygame.sprite.Sprite):
                                   Defaults to grass.
         """
         super().__init__()
-        self.image = pygame.image.load(os.path.join(
-            dirname, '../assets/field', element_images[elem]))
+        self.path = os.path.join(
+            dirname, '../assets/field', element_images[elem])
+        self.image = pygame.image.load(self.path)
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
