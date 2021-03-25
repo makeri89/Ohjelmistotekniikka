@@ -17,7 +17,7 @@ class Walls:
         # for i in field_map:
         #     print(i)
             
-        print(self.find_walls())
+        # print(self.find_walls())
 
         self.contact_points()
 
@@ -29,96 +29,35 @@ class Walls:
         can be hit from below, from above etc. The length of each wall
         is saved as a range from the first wall piece to the last wall piece.
         """
-        for y in range(len(self.__field_map)):
-            for x in range(len(self.__field_map[0])):
+        walls_on_coordinates = {'top': {}, 'bottom': {}, 'left': {}, 'right': {}}
+        
+        for y in range(1,len(self.__field_map)-1):
+            for x in range(1,len(self.__field_map[0])-1):
                 if self.__field_map[y][x] == 1:
                     if self.__field_map[y-1][x] != 1:
-                        self._walls['top'].append(x,y)
+                        self._walls['top'].append((x,y))
                     if self.__field_map[y+1][x] != 1:
-                        self._walls['bottom'].append(x,y)
+                        self._walls['bottom'].append((x,y))
                     if self.__field_map[y][x-1] != 1:
-                        self._walls['left'].append(x,y)
+                        self._walls['left'].append((x,y))
                     if self.__field_map[y][x+1] != 1:
                         self._walls['right'].append((x,y))
-        
-        
-        # top = bottom = left = right = False
-        # start_top = start_bottom = start_right = 0
-        # start_left = (0, 0)
-        
-        # for y in range(1,len(self.__field_map)-1):
-        #     for x in range(1,len(self.__field_map[0])-1):
-        #         if self.__field_map[y][x] == 1:
-
-        #             if self.__field_map[y+1][x] != 1:
-        #                 if not bottom:
-        #                     start_bottom = x
-        #                     bottom = True
-        #             else:
-        #                 if bottom:
-        #                     bottom = False
-        #                     self._walls['bottom'].append((start_bottom, x, y))
-
-        #             if self.__field_map[y-1][x] != 1:
-        #                 if not top:
-        #                     start_top = x
-        #                     top = True
-        #             else:
-        #                 if top:
-        #                     top = False
-        #                     self._walls['top'].append((start_top, x, y-1))
-
-        #             if self.__field_map[y][x+1] != 1:
-        #                 if not right:
-        #                     right = True
-        #                     start_right = y
-                    # else:
-                    #     if right:
-                    #         right = False
-                    #         self._walls['right'].append((x, start_right, y))
-
-                #     if self.__field_map[y][x-1] != 1:
-                #         if not left:
-                #             left = True
-                #             start_left = (x, y)
-                #     # else:
-                #     #     if left:
-                #     #         left = False
-                #     #         self._walls['left'].append((x, start_left[1], y))
-                # else:
-                #     if bottom:
-                #         bottom = False
-                #         self._walls['bottom'].append((start_bottom, x, y))
-
-                #     if top:
-                #         top = False
-                #         self._walls['top'].append((start_top, x, y-1))
-
-                #     if (right and self.__field_map[y+1][x-1] != 1 and self.__field_map[y][x-1] == 1) or (right and self.__field_map[y+1][x-1] != 1 and self.__field_map[y+1][x] == 1):
-                #         right = False
-                #         self._walls['right'].append((x, start_right, y))
-
-                #     if (left and self.__field_map[y+1][start_left[0]] != 1) or (left and self.__field_map[y+1][start_left[0]] != 1 and self.__field_map[y+1][start_left[0]-1] != 1):
-                #         left = False
-                #         self._walls['left'].append((start_left[0], start_left[1], y))
-
-        # if bottom:
-        #     bottom = False
-        #     self._walls['bottom'].append((start_bottom, x, y))
-
-        # if top:
-        #     top = False
-        #     self._walls['top'].append((start_top, x, y-1))
-
-        # if right:
-        #     right = False
-        #     self._walls['right'].append((x, start_right, y))
-
-        # if left:
-        #     left = False
-        #     self._walls['left'].append((start_left[0], start_left[1], y))
+                        
+        for k, v in self._walls.items():
+            if k == 'left' or k == 'right':
+                for i in v:
+                    if i[0] not in walls_on_coordinates[k]:
+                        walls_on_coordinates[k][i[0]] = []
+                    walls_on_coordinates[k][i[0]].append(i[1])
+            else:
+                for i in v:
+                    if i[1] not in walls_on_coordinates[k]:
+                        walls_on_coordinates[k][i[1]] = []
+                    walls_on_coordinates[k][i[1]].append(i[0])
+                
+        print(walls_on_coordinates)
+            
+            
 
     def get_contact_points(self):
-        for k, v in self._walls.items():
-            print(k, v)
         return self._walls
