@@ -18,3 +18,9 @@ pytest = "^6.2.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+  "visual: tests that require a pygame display",
+  "nonvisual: tests that do not require a pygame display",
+]
