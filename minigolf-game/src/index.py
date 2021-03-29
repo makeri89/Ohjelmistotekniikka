@@ -1,15 +1,15 @@
 import os
 from tkinter import Tk
 import pygame
-from field_elements.field import Field
-from clock import Clock
-from game import Game
-from renderer import Renderer
-from ball_handler import BallHandler
-from levels.field_two import get_field
-from field_elements.aim_line import AimLine
-from ui.menu import Menu
 from walls import Walls
+from ui.menu import Menu
+from field_elements.aim_line import AimLine
+from levels.field_two import get_field
+from ball_handler import BallHandler
+from renderer import Renderer
+from game import Game
+from clock import Clock
+from field_elements.field import Field
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
@@ -37,7 +37,8 @@ def main(name='Player 1'):
     clock = Clock()
     ball = field.get_ball()
     aim_line = AimLine(display)
-    ball_handler = BallHandler(ball, field, aim_line, walls.get_contact_points())
+    ball_handler = BallHandler(
+        ball, field, aim_line, walls.get_contact_points())
     renderer = Renderer(display, field, ball, aim_line)
 
     game = Game(clock, field, display, renderer, ball_handler)

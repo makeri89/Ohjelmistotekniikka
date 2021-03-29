@@ -33,7 +33,7 @@ class BallHandler:
         self.shot_power = 0
         self.ball_x = self.ball.rect.x
         self.ball_y = self.ball.rect.y
-        self.walls = walls
+        self.hit_ranges = walls
 
     def handle_shot(self):
         """A method to handle the shot.
@@ -98,48 +98,48 @@ class BallHandler:
         """A method to bounce the ball off walls.
 
         Checks the outer walls manually.
+        The walls inside the field are checked based on the coordinate
+        ranges of the walls.The ranges are modified a bit to take
+        into account the usage of the upper left coordinates of the ball.
+        A range of wall is only checked if the direction of the ball
+        allows the ball to hit the wall from that direction.
         One cell is 15x15 pixels and the ball is 13x13 pixels.
         """
-        wall_hit = self.field.check_wall_hits()
         height, width = self.field.get_dimensions()
-        
+
         ball_x = self.ball.rect.x
         ball_y = self.ball.rect.y
-        
-        if ball_x == 15 or ball_x == width-28:
+
+        if ball_x <= 15 and self.x_speed < 0:
             self.x_speed = -self.x_speed
-        if ball_y == 15 or ball_y == height-28:
+        if ball_x >= width-28 and self.x_speed > 0:
+            self.x_speed = -self.x_speed
+        if ball_y <= 15 and self.y_speed < 0:
             self.y_speed = -self.y_speed
-            
+        if ball_y >= height-28 and self.y_speed > 0:
+            self.y_speed = -self.y_speed
+
+        if self.x_speed < 0:
+            for x_coord, ranges in self.hit_ranges['right'].items():
+                if ball_x in range((x_coord+1)*15-2, (x_coord+1)*15):
+                    for y_pair in ranges:
+                        if ball_y in range((y_pair[0]-1)*15+4, y_pair[1]*15-4):
+                            self.x_speed = -self.x_speed
         if self.x_speed > 0:
-            for i in self.walls['left']:
-                if ball_x+13 in range(i[0]*15, i[0]*15+5) and ball_y in range((i[1]-1)*15, (i[2]+1)*15):
-                    self.x_speed = -self.x_speed
-                    # print('hit', self.ball.rect, i)
-        elif self.x_speed < 0:
-            for i in self.walls['right']:
-                if ball_x == i[0]*15 and ball_y in range((i[1]-1)*15, (i[2]+1)*15):
-                    self.x_speed = -self.x_speed
-                    
+            for x_coord, ranges in self.hit_ranges['left'].items():
+                if ball_x in range((x_coord-1)*15+2, (x_coord-1)*15+4):
+                    for y_pair in ranges:
+                        if ball_y in range((y_pair[0]-1)*15+4, y_pair[1]*15-4):
+                            self.x_speed = -self.x_speed
+        if self.y_speed < 0:
+            for y_coord, ranges in self.hit_ranges['bottom'].items():
+                if ball_y in range((y_coord+1)*15-2, (y_coord+1)*15):
+                    for x_pair in ranges:
+                        if ball_x in range((x_pair[0]-1)*15+4, x_pair[1]*15-4):
+                            self.y_speed = -self.y_speed
         if self.y_speed > 0:
-            for i in self.walls['top']:
-                if ball_y+13 == i[0]*15 and ball_x in range((i[1]-1)*15, (i[2]+1)*15):
-                    self.y_speed = -self.y_speed
-        elif self.y_speed < 0:
-            for i in self.walls['bottom']:
-                if ball_y == i[0]*15 and ball_x in range((i[1]-1)*15, (i[2]+1)*15):
-                    self.y_speed = -self.y_speed
-            
-            
-        # for i in wall_hit:
-        #     print(i.rect)
-        # if wall_hit:
-        #     self.x_speed = -self.x_speed
-        #     self.y_speed = -self.y_speed
-        # if wall_hit:
-        #     print(wall_hit[0].rect, self.ball.rect)
-        #     if wall_hit[0].rect.x == self.ball.rect.x+13:
-        #         self.x_speed = -self.x_speed
-        #     if wall_hit[0].rect.y == self.ball.rect.y+13:
-        #         self.y_speed = -self.y_speed
-        
+            for y_coord, ranges in self.hit_ranges['top'].items():
+                if ball_y in range((y_coord-1)*15+2, (y_coord-1)*15+4):
+                    for x_pair in ranges:
+                        if ball_x in range((x_pair[0]-1)*15+4, x_pair[1]*15-4):
+                            self.y_speed = -self.y_speed
