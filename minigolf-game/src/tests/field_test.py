@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from field_elements.field import Field
 
 field_map = [[1, 1, 1, 1, 1],
@@ -11,6 +12,7 @@ field_map = [[1, 1, 1, 1, 1],
              [1, 1, 1, 1, 1]]
 
 
+@pytest.mark.nonvisual
 class TestField(unittest.TestCase):
     def setUp(self):
         self.field = Field(field_map)

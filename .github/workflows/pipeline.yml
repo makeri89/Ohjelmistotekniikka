@@ -22,4 +22,4 @@ jobs:
       - name: install dependencies
         run: poetry install
       - name: run tests
-        run: poetry run invoke test
+        run: poetry run invoke test-nonvisual

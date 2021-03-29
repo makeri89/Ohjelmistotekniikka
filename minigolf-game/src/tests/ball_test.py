@@ -1,7 +1,9 @@
 import unittest
+import pytest
 from field_elements.ball import Ball
 
 
+@pytest.mark.nonvisual
 class TestBall(unittest.TestCase):
     def setUp(self):
         self.ball = Ball(10, 10)

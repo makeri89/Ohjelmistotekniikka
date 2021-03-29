@@ -1,8 +1,10 @@
 import unittest
+import pytest
 import pygame
 from field_elements.aim_line import AimLine
 
 
+@pytest.mark.visual
 class TestAimline(unittest.TestCase):
     def setUp(self):
         self.display = pygame.display.set_mode((300, 400))

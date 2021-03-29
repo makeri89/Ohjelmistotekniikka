@@ -1,7 +1,9 @@
 import unittest
+import pytest
 from field_elements.element import Element
 
 
+@pytest.mark.nonvisual
 class TestElement(unittest.TestCase):
     def setUp(self):
         self.hole = Element(elem=0)
