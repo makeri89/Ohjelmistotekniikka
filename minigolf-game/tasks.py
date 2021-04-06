@@ -27,6 +27,9 @@ def test(ctx):
 
 @task
 def test_nonvisual(ctx):
+    """
+    Github actions cannot run visual pygame tests.
+    """
     ctx.run('pytest -m "nonvisual"')
 
 

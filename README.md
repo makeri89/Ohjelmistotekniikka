@@ -1,19 +1,54 @@
-# Ohjelmistotekniikan harjoitustyö
+# Minigolf
 
-### Tähän repositorioon valmistuu *Ohjelmistotekniikka*-kurssin harjoitustyö sekä kurssin laskarien tehtävät!
+Tämä on simppeli 2D-versio minigolfista, joka on toteutettu Pythonilla.
 
-#### Laskarit
+Peli on Ohjelmistotekniikka-kurssiin kuuluva projektityö, joka kasvaa pikkuhiljaa kurssin edetessä.
 
-- Viikko 1:
+Peli toimii Python-versiolla `3.6` tai uudemmalla.
 
-  - [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
+### Dokumentaatio
 
-  - [gitlog.txt](/laskarit/viikko1/gitlog.txt)
+- [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](/dokumentaatio/vaatimusmaarittely.md)
 
-- [Viikko 2](/laskarit/viikko2)
+### Asennus
 
-#### Harjoitustyö
+1. Siirry komentorivillä minigolf-game kansioon
 
-Harjoitustyön aiheena on minigolf-peli, joka toteutetaan Pythonilla käyttäen Pygamea. Pelin toteutus alkaa [vaatimusmäärittelyllä](/dokumentaatio/vaatimusmaarittely.md)
+2. Asenna riippuvuudet komennolla
 
-Harjoitustyöhön käytettyjen tuntien kirjanpito löytyy [täältä](/dokumentaatio/tyoaikakirjanpito.md).
+```
+poetry install
+```
+
+3. Käynnistä sovellus komennolla
+
+```
+poetry run invoke start
+```
+
+### Komentorivikomennot
+
+#### Ohjelman voi suorittaa komennolla
+
+```
+poetry run invoke start
+```
+
+#### Ohjelman testit voi suorittaa komennolla
+
+```
+poetry run invoke test
+```
+
+#### Testikattavuusraportin saa luotua komennolla
+
+```
+poetry run invoke coverage-report
+```
+
+#### Sovellukselle on myös määritelty pylint tarkistus komennolla
+
+```
+poetry run invoke lint
+```
