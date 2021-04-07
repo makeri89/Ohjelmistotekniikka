@@ -23,6 +23,6 @@ class AimLine:
             start_y: Starting y coordinate of the line
             target: Mouse position
         """
-        start = (start_x, start_y)
+        start = (start_x+6, start_y+6)
         self.line = pygame.draw.line(
             self.__display, self.__color, start, target, 1)

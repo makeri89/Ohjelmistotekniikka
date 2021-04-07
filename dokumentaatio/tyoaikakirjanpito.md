@@ -10,5 +10,6 @@
 | 22.3. |  2h  | refaktorointia again ja tähtäysviiva lyönneille                                                          |
 | 25.3. |  5h  | törmäyksen tunnistuksen rakentamista ja suunnittelua                                                     |
 | 29.3. |  4h  | törmäyksen tunnistus valmis                                                                              |
+| 7.4.  |  4h  | pallon liikkumisen suunnittelua ja pieniä muutoksia                                                      |
 |       |      |                                                                                                          |
-| Yht.  | 34h  |                                                                                                          |
+| Yht.  | 38h  |                                                                                                          |

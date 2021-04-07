@@ -27,3 +27,9 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
+
+    def move(self, x=0, y=0):
+        self.rect.move_ip(x, y)
+
+    def get_coordinates(self):
+        return self.rect.x, self.rect.y

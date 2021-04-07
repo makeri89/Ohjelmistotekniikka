@@ -34,6 +34,13 @@ class BallHandler:
         self.ball_x = self.ball.rect.x
         self.ball_y = self.ball.rect.y
         self.hit_ranges = walls
+        self.initial_ball_coordinates = self.ball.get_coordinates()
+        self.ball_data = {'coordinates': self.initial_ball_coordinates,
+                          'targetCoordinates': self.initial_ball_coordinates,
+                          'velocity': 0,  'travelled': 0, 'ratio': 0, 'direction': ''}
+        self.shot_allowed = True
+        self.friction = 0.99
+        self.velocity = 100
 
     def handle_shot(self):
         """A method to handle the shot.
@@ -41,13 +48,17 @@ class BallHandler:
         Sets ball speed and shot power.
         The total trip needs to be reset on every shot in order to calculate the shot distance.
         """
-        click_pos = pygame.mouse.get_pos()
-        self.ball_x, self.ball_y = self.ball.rect.x, self.ball.rect.y
-        self.x_speed = click_pos[0] - self.ball_x
-        self.y_speed = click_pos[1] - self.ball_y
-        self.shot_power = math.sqrt(
-            self.x_speed**2+self.y_speed**2)*2
-        self.total_trip = 0
+        if self.shot_allowed:
+            click_pos = pygame.mouse.get_pos()
+            self.ball_x, self.ball_y = self.ball.get_coordinates()
+            self.initial_ball_coordinates = self.ball.get_coordinates()
+            self.x_speed = (click_pos[0] - self.ball_x)
+            self.y_speed = (click_pos[1] - self.ball_y)
+            self.shot_power = math.sqrt(
+                self.x_speed**2+self.y_speed**2)*2
+            self.total_trip = 0
+            self.shot_allowed = False
+            self.velocity = 100
 
     def move_ball(self):
         """A method that handles moving the ball.
@@ -57,27 +68,30 @@ class BallHandler:
         The coordinates are updated based on the direction of the shot.
         If the ball has travelled enough, its speed will be zeroed.
         """
-        self.x_moves += abs(self.x_speed)*100
-        self.y_moves += abs(self.y_speed)*100
+        self.x_moves += abs(self.x_speed)*self.velocity
+        self.y_moves += abs(self.y_speed)*self.velocity
 
-        if self.x_moves > 10000:
+        if self.x_moves > 1000:
             if self.x_speed > 0:
-                self.ball.rect.move_ip(1, 0)
+                self.ball.move(1, 0)
             elif self.x_speed < 0:
-                self.ball.rect.move_ip(-1, 0)
+                self.ball.move(-1, 0)
             self.x_moves = 0
             self.total_trip += 1
-        if self.y_moves > 10000:
+        if self.y_moves > 1000:
             if self.y_speed > 0:
-                self.ball.rect.move_ip(0, 1)
+                self.ball.move(0, 1)
             elif self.y_speed < 0:
-                self.ball.rect.move_ip(0, -1)
+                self.ball.move(0, -1)
             self.y_moves = 0
             self.total_trip += 1
 
-        if self.total_trip >= self.shot_power:
+        self.velocity *= self.friction
+
+        if self.total_trip >= self.shot_power or self.velocity < 1:
             self.x_speed = 0
             self.y_speed = 0
+            self.shot_allowed = True
 
         self.water_hit()
         self.wall_hit()
@@ -93,6 +107,7 @@ class BallHandler:
             self.ball.rect.y = self.ball_y
             self.x_speed = 0
             self.y_speed = 0
+            self.shot_allowed = True
 
     def wall_hit(self):
         """A method to bounce the ball off walls.
@@ -106,9 +121,7 @@ class BallHandler:
         One cell is 15x15 pixels and the ball is 13x13 pixels.
         """
         height, width = self.field.get_dimensions()
-
-        ball_x = self.ball.rect.x
-        ball_y = self.ball.rect.y
+        ball_x, ball_y = self.ball.get_coordinates()
 
         if ball_x <= 15 and self.x_speed < 0:
             self.x_speed = -self.x_speed
@@ -123,23 +136,27 @@ class BallHandler:
             for x_coord, ranges in self.hit_ranges['right'].items():
                 if ball_x in range((x_coord+1)*15-2, (x_coord+1)*15):
                     for y_pair in ranges:
-                        if ball_y in range((y_pair[0]-1)*15+4, y_pair[1]*15-4):
-                            self.x_speed = -self.x_speed
+                        self.switch_x_direction(y_pair, ball_y)
         if self.x_speed > 0:
             for x_coord, ranges in self.hit_ranges['left'].items():
                 if ball_x in range((x_coord-1)*15+2, (x_coord-1)*15+4):
                     for y_pair in ranges:
-                        if ball_y in range((y_pair[0]-1)*15+4, y_pair[1]*15-4):
-                            self.x_speed = -self.x_speed
+                        self.switch_x_direction(y_pair, ball_y)
         if self.y_speed < 0:
             for y_coord, ranges in self.hit_ranges['bottom'].items():
                 if ball_y in range((y_coord+1)*15-2, (y_coord+1)*15):
                     for x_pair in ranges:
-                        if ball_x in range((x_pair[0]-1)*15+4, x_pair[1]*15-4):
-                            self.y_speed = -self.y_speed
+                        self.switch_y_direction(x_pair, ball_x)
         if self.y_speed > 0:
             for y_coord, ranges in self.hit_ranges['top'].items():
                 if ball_y in range((y_coord-1)*15+2, (y_coord-1)*15+4):
                     for x_pair in ranges:
-                        if ball_x in range((x_pair[0]-1)*15+4, x_pair[1]*15-4):
-                            self.y_speed = -self.y_speed
+                        self.switch_y_direction(x_pair, ball_x)
+
+    def switch_y_direction(self, x_range, ball_x):
+        if ball_x in range((x_range[0]-1)*15+4, x_range[1]*15-4):
+            self.y_speed = -self.y_speed
+
+    def switch_x_direction(self, y_range, ball_y):
+        if ball_y in range((y_range[0]-1)*15+4, y_range[1]*15-4):
+            self.x_speed = -self.x_speed

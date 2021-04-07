@@ -49,4 +49,4 @@ class Game:
             self.field.in_hole()
 
             self.renderer.render()
-            self.clock.tick(60)
+            self.clock.tick(120)
