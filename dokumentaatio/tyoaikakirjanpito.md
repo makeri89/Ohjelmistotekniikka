@@ -11,5 +11,7 @@
 | 25.3. |  5h  | törmäyksen tunnistuksen rakentamista ja suunnittelua                                                     |
 | 29.3. |  4h  | törmäyksen tunnistus valmis                                                                              |
 | 7.4.  |  4h  | pallon liikkumisen suunnittelua ja pieniä muutoksia                                                      |
+| 9.4.  |  3h  | pallon liikkumista                                                                                       |
+| 10.4. |  4h  | pallon liikkumista, lyöntilaskuri, kentän valinta                                                        |
 |       |      |                                                                                                          |
-| Yht.  | 38h  |                                                                                                          |
+| Yht.  | 47h  |                                                                                                          |

@@ -9,7 +9,7 @@ class Game:
         run: Starts the loop for the game.
     """
 
-    def __init__(self, clock, field, display, renderer, ball_handler):
+    def __init__(self, clock, field, display, renderer, ball_handler, counter):
         """Constructor that sets the required objects to run the game.
 
         Args:
@@ -20,6 +20,7 @@ class Game:
         self.clock = clock
         self.field = field
         self.display = display
+        self.counter = counter
 
         self.renderer = renderer
         self.ball_handler = ball_handler
@@ -48,5 +49,5 @@ class Game:
             self.ball_handler.move_ball()
             self.field.in_hole()
 
-            self.renderer.render()
+            self.renderer.render(self.counter.get_shots())
             self.clock.tick(120)

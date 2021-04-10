@@ -18,6 +18,8 @@ class AimLine:
     def draw_line(self, start_x, start_y, target):
         """A method to draw the line.
 
+        Adding 6 to the coordinates moves the line to the center of the ball.
+
         Args:
             start_x: Starting x coordinate of the line
             start_y: Starting y coordinate of the line

@@ -12,7 +12,7 @@ class TestAimline(unittest.TestCase):
 
     def test_line_coordinates_are_correct(self):
         self.line.draw_line(10, 30, (100, 200))
-        self.assertEqual(self.line.line[0], 10)
-        self.assertEqual(self.line.line[1], 30)
-        self.assertEqual(self.line.line[2], 100-10+1)
-        self.assertEqual(self.line.line[3], 200-30+1)
+        self.assertEqual(self.line.line[0], 16)
+        self.assertEqual(self.line.line[1], 36)
+        self.assertEqual(self.line.line[2], 100-16+1)
+        self.assertEqual(self.line.line[3], 200-36+1)

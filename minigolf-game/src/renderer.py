@@ -1,4 +1,5 @@
 import pygame
+from score import Score
 
 
 class Renderer:
@@ -16,13 +17,15 @@ class Renderer:
         self._field = field
         self._ball = ball
         self._aim_line = aim_line
+        self._score = Score(self._display)
 
-    def render(self):
+    def render(self, score):
         """A method to update all of the sprites on the field.
         """
         try:
             self._field.update(self._display)
             self.draw_aim()
+            self._score.draw_score(score)
             pygame.display.update()
         except pygame.error:
             pygame.quit()
