@@ -38,7 +38,7 @@ def main(name='Player 1'):
     ball = field.get_ball()
     aim_line = AimLine(display)
     ball_handler = BallHandler(
-        ball, field, aim_line, walls.get_contact_points())
+        ball, field, walls.get_contact_points())
     renderer = Renderer(display, field, ball, aim_line)
 
     game = Game(clock, field, display, renderer, ball_handler)
