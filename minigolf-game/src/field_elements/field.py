@@ -1,4 +1,4 @@
-import sys
+import time
 import pygame
 from field_elements.element import Element
 from field_elements.ball import Ball
@@ -129,4 +129,3 @@ class Field:
         if in_hole:
             print('you won')
             pygame.quit()
-            sys.exit()

@@ -34,8 +34,9 @@ class Menu:
 
         self.clicked.set(self.levels[0])
         drop = OptionMenu(self.root, self.clicked, *self.levels)
-        # drop.pack()
         drop.grid(row=2, column=1)
+        dropdown_label = ttk.Label(master=self.root, text='Pick a level')
+        dropdown_label.grid(row=2, column=0, padx=10, pady=5)
 
     def handle_click(self):
         """Starts the game when called.

@@ -27,6 +27,8 @@ poetry install
 poetry run invoke start
 ```
 
+Pelin päävalikosta voi aloittaa uuden pelin myös edellisen pelin päätyttyä, mutta menu toimii tällä hetkellä vasta muutaman sekunnin viiveellä pelin päättymisestä.
+
 ### Komentorivikomennot
 
 #### Ohjelman voi suorittaa komennolla
@@ -45,6 +47,12 @@ poetry run invoke test
 
 ```
 poetry run invoke coverage-report
+```
+
+tai selkeämmin luettava raportti
+
+```
+poetry run invoke coverage-html
 ```
 
 #### Sovellukselle on myös määritelty pylint tarkistus komennolla
