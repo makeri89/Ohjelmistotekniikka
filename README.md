@@ -9,7 +9,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 ### Dokumentaatio
 
 - [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
-- [Työaikakirjanpito](/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
 
 ### Asennus
 
