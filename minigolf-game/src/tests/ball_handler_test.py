@@ -28,6 +28,9 @@ class MockField:
     def get_dimensions(self):
         return 200, 300
 
+    def in_hole(self):
+        pass
+
 
 mock_hit_ranges = {'right': {}, 'left': {}, 'top': {}, 'bottom': {}}
 
