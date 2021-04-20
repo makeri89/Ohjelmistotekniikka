@@ -15,5 +15,6 @@
 | 10.4. |  4h  | pallon liikkumista, lyöntilaskuri, kentän valinta                                                        |
 | 16.4. |  1h  | Pallon värin valinta, testejä                                                                            |
 | 19.4. |  3h  | Pieniä muutoksia, testien suunnittelua                                                                   |
+| 20.4. |  3h  | BallHandler luokalle testejä, luokkakaavio                                                               |
 |       |      |                                                                                                          |
-| Yht.  | 51h  |                                                                                                          |
+| Yht.  | 54h  |                                                                                                          |

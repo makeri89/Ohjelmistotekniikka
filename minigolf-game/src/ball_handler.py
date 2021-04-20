@@ -90,6 +90,8 @@ class BallHandler:
         self.total_trip += max(abs(self.x_dir/self.velocity),
                                abs(self.y_dir/self.velocity))
 
+        self.field.in_hole()
+
         if self.total_trip >= self.shot_power or self.velocity < 1:
             self.x_dir = 0
             self.y_dir = 0

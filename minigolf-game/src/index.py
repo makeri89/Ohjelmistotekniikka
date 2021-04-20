@@ -44,7 +44,7 @@ def main(name='Player 1', level=2, ball_color='blue'):
         ball, field, walls.get_contact_points(), counter)
     renderer = Renderer(display, field, ball, aim_line)
 
-    game = Game(clock, field, display, renderer, ball_handler, counter)
+    game = Game(clock, display, renderer, ball_handler, counter)
     game.run()
 
 
