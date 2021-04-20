@@ -11,8 +11,11 @@ Peli채 voi pelata yksinpelin채 eli pelin tavoite on ainoastaan saada pallo reik�
 ## Toiminnallisuus
 
 Pelaaja voi
+
 :heavy_check_mark: asettaa itselleen peliin nimimerkin
+
 :heavy_check_mark: pelata pelin minigolfia
+
 :heavy_check_mark: vaihtaa pallonsa v채ri채
 
 - tarkastella aiempia tuloksiaan eri kentill채
