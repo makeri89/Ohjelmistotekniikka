@@ -13,5 +13,7 @@
 | 7.4.  |  4h  | pallon liikkumisen suunnittelua ja pieniä muutoksia                                                      |
 | 9.4.  |  3h  | pallon liikkumista                                                                                       |
 | 10.4. |  4h  | pallon liikkumista, lyöntilaskuri, kentän valinta                                                        |
+| 16.4. |  1h  | Pallon värin valinta, testejä                                                                            |
+| 19.4. |  3h  | Pieniä muutoksia, testien suunnittelua                                                                   |
 |       |      |                                                                                                          |
-| Yht.  | 47h  |                                                                                                          |
+| Yht.  | 51h  |                                                                                                          |

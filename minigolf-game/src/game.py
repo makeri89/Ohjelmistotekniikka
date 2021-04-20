@@ -30,24 +30,23 @@ class Game:
         Handles all the different event types that have an affect on the game.
         Calls all the methods required to move the ball etc.
 
-        On a shot, the shot power is set to double the distance from the ball to the mouse position.
+        Raises:
+            pygame.error:
+                If pygame encounters an error, the error message is printed and the game quits
         """
-        running = True
-        while running:
+        while True:
             try:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         # sys.exit()
                     if event.type == pygame.MOUSEBUTTONDOWN:
-                        self.ball_handler.handle_shot()
-            except pygame.error as e:
-                print(f'An error "{e}" occurred :(')
-                running = False
+                        self.ball_handler.handle_shot(pygame.mouse.get_pos())
+            except pygame.error as error_msg:
+                print(f'An error "{error_msg}" occurred :(')
                 pygame.quit()
-
+                break
             self.ball_handler.move_ball()
-            self.field.in_hole()
-
             self.renderer.render(self.counter.get_shots())
+            self.field.in_hole()
             self.clock.tick(120)

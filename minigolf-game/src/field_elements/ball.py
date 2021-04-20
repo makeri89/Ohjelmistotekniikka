@@ -3,6 +3,9 @@ import pygame
 
 dirname = os.path.dirname(__file__)
 
+balls = {'blue': 'blueball.png', 'green': 'greenball.png',
+         'yellow': 'yellowball.png', 'red': 'redball.png'}
+
 
 class Ball(pygame.sprite.Sprite):
     """Class for the ball in the game
@@ -12,7 +15,7 @@ class Ball(pygame.sprite.Sprite):
         rect: Pygame rect object attributes
     """
 
-    def __init__(self, _x=0, _y=0, ball='blueball.png'):
+    def __init__(self, _x=0, _y=0, ball='blue'):
         """Constructor for the class that creates the ball and places
         it on it's starting position.
 
@@ -23,7 +26,7 @@ class Ball(pygame.sprite.Sprite):
         """
         super().__init__()
         self.image = pygame.image.load(os.path.join(
-            dirname, '../assets/balls', ball))
+            dirname, '../assets/balls', balls[ball]))
         self.rect = self.image.get_rect()
         self.rect.x = _x
         self.rect.y = _y
@@ -33,3 +36,7 @@ class Ball(pygame.sprite.Sprite):
 
     def get_coordinates(self):
         return self.rect.x, self.rect.y
+
+    def set_location(self, x, y):
+        self.rect.x = x
+        self.rect.y = y

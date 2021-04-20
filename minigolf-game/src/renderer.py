@@ -1,5 +1,5 @@
 import pygame
-from score import Score
+from ui.score import Score
 
 
 class Renderer:
@@ -28,7 +28,8 @@ class Renderer:
             self._score.draw_score(score)
             pygame.display.update()
         except pygame.error:
-            pygame.quit()
+            print('error in here too')
+            # pygame.quit()
 
     def draw_aim(self):
         mouse_pos = pygame.mouse.get_pos()

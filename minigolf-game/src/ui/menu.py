@@ -16,7 +16,9 @@ class Menu:
         self.start_game = start_game
         self.entry = None
         self.levels = get_keys()
-        self.clicked = StringVar()
+        self.level = StringVar()
+        self.ball_color = StringVar()
+        self.colors = ['blue', 'green', 'red', 'yellow']
 
     def start(self):
         """A method to set the windows elements.
@@ -30,15 +32,24 @@ class Menu:
         label.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
         username_label.grid(row=1, column=0, padx=5, pady=5)
         self.entry.grid(row=1, column=1, padx=10, pady=5)
-        button.grid(row=3, column=0, columnspan=2, pady=5)
+        button.grid(row=4, column=0, columnspan=2, pady=5)
 
-        self.clicked.set(self.levels[0])
-        drop = OptionMenu(self.root, self.clicked, *self.levels)
-        drop.grid(row=2, column=1)
-        dropdown_label = ttk.Label(master=self.root, text='Pick a level')
-        dropdown_label.grid(row=2, column=0, padx=10, pady=5)
+        self.level.set(self.levels[0])
+        level_dropdown = OptionMenu(self.root, self.level, *self.levels)
+        level_dropdown.grid(row=2, column=1)
+        level_dropdown_label = ttk.Label(
+            master=self.root, text='Pick a level: ')
+        level_dropdown_label.grid(row=2, column=0, padx=10, pady=5)
+
+        self.ball_color.set('blue')
+        ball_dropdown = OptionMenu(self.root, self.ball_color, *self.colors)
+        ball_dropdown.grid(row=3, column=1)
+        ball_dropdown_label = ttk.Label(
+            master=self.root, text='Choose ball color: ')
+        ball_dropdown_label.grid(row=3, column=0, padx=10, pady=5)
 
     def handle_click(self):
         """Starts the game when called.
         """
-        self.start_game(self.entry.get(), self.clicked.get())
+        self.start_game(self.entry.get(), self.level.get(),
+                        self.ball_color.get())

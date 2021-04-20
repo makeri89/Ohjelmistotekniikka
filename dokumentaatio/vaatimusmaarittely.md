@@ -11,14 +11,16 @@ Peliä voi pelata yksinpelinä eli pelin tavoite on ainoastaan saada pallo reik�
 ## Toiminnallisuus
 
 Pelaaja voi
-- asettaa itselleen peliin nimimerkin
-- pelata pelin minigolfia
-- vaihtaa pallonsa väriä
+:heavy_check_mark: asettaa itselleen peliin nimimerkin
+:heavy_check_mark: pelata pelin minigolfia
+:heavy_check_mark: vaihtaa pallonsa väriä
+
 - tarkastella aiempia tuloksiaan eri kentillä
 
 ## Pelin erilaiset komponentit
 
 Pelikentiltä voi löytyä seuraavia elementtejä:
+
 - ruohoa
 - vettä
 - hiekkaa
@@ -27,6 +29,7 @@ Pelikentiltä voi löytyä seuraavia elementtejä:
 ## Jatkokehitysideoita
 
 Kun pelin perusversio yksinpelillä on saatu toimivaksi, voidaan peliä laajentaa lisäämällä siihen esimerkiksi
+
 - moninpeli
 - mahdollisuus omien tasojen luomiseen pelaajille
 - mahdollisuus eri vaikeustason kenttäkokonaisuuksien pelaamiseen

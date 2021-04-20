@@ -17,8 +17,8 @@ class Walls:
             field_map: The field as a 2D matrix
         """
         self.__field_map = field_map
-        self._walls = {'top': [], 'bottom': [], 'left': [], 'right': []}
-        self._wall_ranges = {'top': {}, 'bottom': {}, 'left': {}, 'right': {}}
+        self.__walls = {'top': [], 'bottom': [], 'left': [], 'right': []}
+        self.__wall_ranges = {'top': {}, 'bottom': {}, 'left': {}, 'right': {}}
 
         self.contact_points()
         self.singular_ranges()
@@ -34,13 +34,13 @@ class Walls:
             for x in range(1, len(self.__field_map[0])-1):
                 if self.__field_map[y][x] == 1:
                     if self.__field_map[y-1][x] != 1:
-                        self._walls['top'].append((x, y))
+                        self.__walls['top'].append((x, y))
                     if self.__field_map[y+1][x] != 1:
-                        self._walls['bottom'].append((x, y))
+                        self.__walls['bottom'].append((x, y))
                     if self.__field_map[y][x-1] != 1:
-                        self._walls['left'].append((x, y))
+                        self.__walls['left'].append((x, y))
                     if self.__field_map[y][x+1] != 1:
-                        self._walls['right'].append((x, y))
+                        self.__walls['right'].append((x, y))
 
     def singular_ranges(self):
         """A method to organize the ranges of the walls.
@@ -48,25 +48,25 @@ class Walls:
         The ranges are arranged according to their x or y coordinate
         depending on their position.
         """
-        walls_on_coordinates = {'top': {},
-                                'bottom': {}, 'left': {}, 'right': {}}
-        for direction, coordinates in self._walls.items():
+        walls_on_coordinates = {'top': {}, 'bottom': {},
+                                'left': {}, 'right': {}}
+        for direction, coordinates in self.__walls.items():
             if direction in ('left', 'right'):
                 for i in coordinates:
                     if i[0] not in walls_on_coordinates[direction]:
                         walls_on_coordinates[direction][i[0]] = []
-                        self._wall_ranges[direction][i[0]] = []
+                        self.__wall_ranges[direction][i[0]] = []
                     walls_on_coordinates[direction][i[0]].append(i[1])
             else:
                 for i in coordinates:
                     if i[1] not in walls_on_coordinates[direction]:
                         walls_on_coordinates[direction][i[1]] = []
-                        self._wall_ranges[direction][i[1]] = []
+                        self.__wall_ranges[direction][i[1]] = []
                     walls_on_coordinates[direction][i[1]].append(i[0])
 
         for direction, coordinates in walls_on_coordinates.items():
             for cross_coord, coord_list in coordinates.items():
-                self._wall_ranges[direction][cross_coord] = self.get_ranges(
+                self.__wall_ranges[direction][cross_coord] = self.get_ranges(
                     coord_list)
 
     def get_ranges(self, coord_list):
@@ -97,4 +97,4 @@ class Walls:
         Returns:
             list: A list of ranges for all walls in the field.
         """
-        return self._wall_ranges
+        return self.__wall_ranges

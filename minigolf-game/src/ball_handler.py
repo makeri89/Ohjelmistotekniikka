@@ -1,6 +1,5 @@
 import math
 import random
-import pygame
 
 
 class BallHandler:
@@ -43,14 +42,13 @@ class BallHandler:
         self.velocity = 100
         self.counter = counter
 
-    def handle_shot(self):
+    def handle_shot(self, click_pos):
         """A method to handle the shot.
 
         Sets ball speed and shot power.
         The total trip needs to be reset on every shot in order to calculate the shot distance.
         """
         if self.shot_allowed:
-            click_pos = pygame.mouse.get_pos()
             self.ball_x, self.ball_y = self.ball.get_coordinates()
             self.x_dir = (click_pos[0] - (self.ball_x+6))
             self.y_dir = (click_pos[1] - (self.ball_y+6))
@@ -71,7 +69,7 @@ class BallHandler:
         Moves the ball to the correct direction.
         Since the pygame rect object only handles integer values,
         the remainder values are handled separately.
-        By choosing a random interger below 100, 
+        By choosing a random integer below 100,
         the ball moves correctly most of the time.
         """
         self.ball.move(self.x_dir/self.velocity,
@@ -102,15 +100,14 @@ class BallHandler:
         self.water_hit()
         self.wall_hit()
 
-    def water_hit(self):
+    def water_hit(self, test_helper=False):
         """A method to check if the ball is in water.
 
         If the ball hits water, it is returned to its starting position.
         """
-        water_hit = self.field.check_water_hits()
+        water_hit = self.field.check_water_hits(test_helper)
         if water_hit:
-            self.ball.rect.x = self.ball_x
-            self.ball.rect.y = self.ball_y
+            self.ball.set_location(self.ball_x, self.ball_y)
             self.x_dir = 0
             self.y_dir = 0
             self.shot_allowed = True
@@ -133,23 +130,20 @@ class BallHandler:
         if self.x_dir < 0:
             for x_coord, ranges in self.hit_ranges['right'].items():
                 if ball_x in range((x_coord+1)*15-2, (x_coord+1)*15):
-                    for y_pair in ranges:
-                        self.switch_x_direction(y_pair, ball_y)
+                    self.switch_x_direction(ball_y, ranges)
         elif self.x_dir > 0:
             for x_coord, ranges in self.hit_ranges['left'].items():
                 if ball_x in range((x_coord-1)*15+2, (x_coord-1)*15+4):
-                    for y_pair in ranges:
-                        self.switch_x_direction(y_pair, ball_y)
+                    self.switch_x_direction(ball_y, ranges)
+
         if self.y_dir < 0:
             for y_coord, ranges in self.hit_ranges['bottom'].items():
                 if ball_y in range((y_coord+1)*15-2, (y_coord+1)*15):
-                    for x_pair in ranges:
-                        self.switch_y_direction(x_pair, ball_x)
+                    self.switch_y_direction(ball_x, ranges)
         elif self.y_dir > 0:
             for y_coord, ranges in self.hit_ranges['top'].items():
                 if ball_y in range((y_coord-1)*15+2, (y_coord-1)*15+4):
-                    for x_pair in ranges:
-                        self.switch_y_direction(x_pair, ball_x)
+                    self.switch_y_direction(ball_x, ranges)
 
     def check_outer_walls(self, ball_x, ball_y):
         """A method to manually check if the ball hits the outer walls.
@@ -165,32 +159,30 @@ class BallHandler:
         if ball_y >= height-28 and self.y_dir > 0:
             self.flip_y()
 
-    def switch_y_direction(self, x_range, ball_x):
+    def switch_y_direction(self, ball_x, ranges):
         """Checks if the ball hits a horizontal wall
 
         Args:
             x_range: A range of x coordinates that have walls on them
             ball_x: The x coordinate of the ball
         """
-        if ball_x in range((x_range[0]-1)*15+4, x_range[1]*15-4):
-            self.flip_y()
+        for x_range in ranges:
+            if ball_x in range((x_range[0]-1)*15+4, x_range[1]*15-4):
+                self.flip_y()
 
-    def switch_x_direction(self, y_range, ball_y):
+    def switch_x_direction(self, ball_y, ranges):
         """Checks if the ball hits a vertical wall
 
         Args:
             y_range: A range of y coordinates that have walls on them
             ball_y: The x coordinate of the ball
         """
-        if ball_y in range((y_range[0]-1)*15+4, y_range[1]*15-4):
-            self.flip_x()
+        for y_range in ranges:
+            if ball_y in range((y_range[0]-1)*15+4, y_range[1]*15-4):
+                self.flip_x()
 
     def flip_y(self):
-        """Flips the balls y direction
-        """
         self.y_dir = -self.y_dir
 
     def flip_x(self):
-        """Flips the balls x direction
-        """
         self.x_dir = -self.x_dir

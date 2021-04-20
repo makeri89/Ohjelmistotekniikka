@@ -1,4 +1,3 @@
-import time
 import pygame
 from field_elements.element import Element
 from field_elements.ball import Ball
@@ -19,7 +18,7 @@ class Field:
         ball: A sprite object for the ball
     """
 
-    def __init__(self, field_map):
+    def __init__(self, field_map, ball_color='blue'):
         """Constructor that creates sprite groups
         for all the different elements on the field.
 
@@ -38,6 +37,7 @@ class Field:
         self._dark_sand = pygame.sprite.Group()
         self._all_elements = pygame.sprite.Group()
         self._ball = None
+        self.__ball_color = ball_color
 
         self.place_elements(field_map)
 
@@ -66,7 +66,7 @@ class Field:
                 elif cell == 5:
                     self._dark_sand.add(Element(norm_x, norm_y, 5))
                 elif cell == 6:
-                    self._ball = Ball(norm_x, norm_y)
+                    self._ball = Ball(norm_x, norm_y, self.__ball_color)
                     self._grass.add(Element(norm_x, norm_y, 2))
 
         self._all_elements.add(self._holes, self._walls, self._water,
@@ -98,7 +98,7 @@ class Field:
         try:
             self._all_elements.draw(display)
         except pygame.error:
-            pass
+            print('hello error here')
 
     def check_wall_hits(self):
         """Checks if the ball has hit the wall
@@ -110,7 +110,7 @@ class Field:
             self._ball, self._walls, dokill=False)
         return contact
 
-    def check_water_hits(self):
+    def check_water_hits(self, test_helper):
         """Checks if the ball has gone to water
 
         Returns:

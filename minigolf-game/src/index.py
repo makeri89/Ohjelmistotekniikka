@@ -18,7 +18,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 CELL_SIZE = 15
 
 
-def main(name='Player 1', level=2):
+def main(name='Player 1', level=2, ball_color='blue'):
     """The main function to launch the game.
 
     Initializes pygame, sets the display dimensions
@@ -34,7 +34,7 @@ def main(name='Player 1', level=2):
     pygame.display.set_caption(f'{name} is now playing')
 
     display = pygame.display.set_mode((width*CELL_SIZE, height*CELL_SIZE))
-    field = Field(field_map)
+    field = Field(field_map, ball_color)
     walls = Walls(field_map)
     clock = Clock()
     ball = field.get_ball()
