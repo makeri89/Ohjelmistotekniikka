@@ -18,7 +18,7 @@ Pelaaja voi
 
 :heavy_check_mark: vaihtaa pallonsa väriä
 
-- tarkastella aiempia tuloksiaan eri kentillä
+:o: tarkastella aiempia tuloksiaan eri kentillä
 
 ## Pelin erilaiset komponentit
 
