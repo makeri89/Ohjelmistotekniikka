@@ -10,6 +10,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 
 - [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
+- [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 
 ### Asennus
 
