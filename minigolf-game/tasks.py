@@ -46,3 +46,13 @@ def coverage_report(ctx):
 @task(coverage)
 def coverage_html(ctx):
     ctx.run('coverage html')
+
+
+@task
+def initialize_db(ctx):
+    ctx.run('python3 src/initialize_db.py')
+
+
+@task
+def print_scores(ctx):
+    ctx.run('python3 src/db_handler.py')

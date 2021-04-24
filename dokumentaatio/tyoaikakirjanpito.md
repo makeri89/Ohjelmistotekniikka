@@ -16,5 +16,6 @@
 | 16.4. |  1h  | Pallon värin valinta, testejä                                                                            |
 | 19.4. |  3h  | Pieniä muutoksia, testien suunnittelua                                                                   |
 | 20.4. |  3h  | BallHandler luokalle testejä, luokkakaavio                                                               |
+| 24.4. |  1h  |  Lisätty pelitulosten tallennus tietokantaan                                                             |
 |       |      |                                                                                                          |
-| Yht.  | 54h  |                                                                                                          |
+| Yht.  | 55h  |                                                                                                          |

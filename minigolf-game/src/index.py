@@ -11,6 +11,7 @@ from shot_counter import ShotCounter
 from renderer import Renderer
 from game import Game
 from clock import Clock
+from score_repository import ScoreRepository
 
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
@@ -44,8 +45,12 @@ def main(name='Player 1', level=2, ball_color='blue'):
         ball, field, walls.get_contact_points(), counter)
     renderer = Renderer(display, field, ball, aim_line)
 
+    score_repository = ScoreRepository()
+
     game = Game(clock, display, renderer, ball_handler, counter)
     game.run()
+
+    score_repository.add_score(name, level, counter.get_shots())
 
 
 window = Tk()
