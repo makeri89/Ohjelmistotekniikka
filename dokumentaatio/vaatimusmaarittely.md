@@ -20,6 +20,12 @@ Pelaaja voi
 
 :o: tarkastella aiempia tuloksiaan eri kentillä
 
+  ✔️ pelin tulokset tallentuvat tietokantaan
+  ✔️ pelattujen pelien tiedot saa tulostettua tietokannasta
+  :o: tietyn pelaajan tulokset saa tulostettua
+  :o: tietyn kentän tulokset saa tulotettua
+  :o: tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
+
 ## Pelin erilaiset komponentit
 
 Pelikentiltä voi löytyä seuraavia elementtejä:
