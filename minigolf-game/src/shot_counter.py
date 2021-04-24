@@ -1,4 +1,7 @@
 class ShotCounter:
+    """A class to keep track of made shots in a game.
+    """
+
     def __init__(self):
         self.counter = 0
 

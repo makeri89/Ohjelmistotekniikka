@@ -7,13 +7,14 @@ class Field:
     """A class for creating the field.
 
     Attributes:
-        height, width: Dimensions of the current field
-        holes,
-        walls,
-        grass,
-        water,
-        light_sand,
-        dark_sand: Groups of sprite objects in the field
+        height: The height of the field
+        width: The width of the field
+        holes: Pygame sprite group for the hole(s)
+        walls: Pygame sprite group for the walls
+        grass: Pygame sprite group for the grass
+        water: Pygame sprite group for the water
+        light_sand: Pygame sprite group for light sand
+        dark_sand: Pygame sprite group for dark sand
         all_elements: A combined group of all of the other sprite groups
         ball: A sprite object for the ball
     """
@@ -42,7 +43,7 @@ class Field:
         self.place_elements(field_map)
 
     def place_elements(self, field_map):
-        """Method to place all the elements in their correct location based on the map
+        """Method to create all the elements in their correct location based on the map
 
         Args:
             field_map: Locations for the elements
@@ -73,11 +74,6 @@ class Field:
                                self._grass, self._light_sand, self._dark_sand, self._ball)
 
     def get_ball(self):
-        """A method to access to the ball from outside of the class
-
-        Returns:
-            Ball: The ball sprite object
-        """
         return self._ball
 
     def get_holes(self):
@@ -90,15 +86,12 @@ class Field:
         return self._height*self.__cell_size, self._width*self.__cell_size
 
     def update(self, display):
-        """Updates all sprites in the class
+        """Updates all sprites of the class
 
         Args:
             display: The current pygame screen
         """
-        try:
-            self._all_elements.draw(display)
-        except pygame.error:
-            print('hello error here')
+        self._all_elements.draw(display)
 
     def check_wall_hits(self):
         """Checks if the ball has hit the wall
@@ -123,9 +116,13 @@ class Field:
         """A method to check if the hole ands the ball are colliding.
 
         Uses a circle ratio instead of the default rectangle.
+
+        Returns:
+            boolean: If the ball is in the hole, it returns True, else False
         """
         in_hole = pygame.sprite.spritecollide(
             self._ball, self._holes, False, pygame.sprite.collide_circle_ratio(0.3))
         if in_hole:
             print('you won')
-            pygame.quit()
+            return True
+        return False

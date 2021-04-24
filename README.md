@@ -22,13 +22,17 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 poetry install
 ```
 
-3. Käynnistä sovellus komennolla
+3. Ensimmäisellä suorituskerralla alusta tietokanta tulosten tallennusta varten
+
+```
+poetry run invoke initialize-db
+```
+
+4. Käynnistä sovellus komennolla
 
 ```
 poetry run invoke start
 ```
-
-Pelin päävalikosta voi aloittaa uuden pelin myös edellisen pelin päätyttyä, mutta menu toimii tällä hetkellä vasta muutaman sekunnin viiveellä pelin päättymisestä.
 
 ### Komentorivikomennot
 
@@ -36,6 +40,12 @@ Pelin päävalikosta voi aloittaa uuden pelin myös edellisen pelin päätyttyä
 
 ```
 poetry run invoke start
+```
+
+#### Tuloshistorian saa tulostettua komennolla
+
+```
+poetry run invoke print-scores
 ```
 
 #### Ohjelman testit voi suorittaa komennolla

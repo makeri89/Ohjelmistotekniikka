@@ -20,7 +20,7 @@ class Menu:
         self.ball_color = StringVar()
         self.colors = ['blue', 'green', 'red', 'yellow']
 
-    def start(self):
+    def initialize(self):
         """A method to set the windows elements.
         """
         label = ttk.Label(master=self.root, text='Play some minigolf')

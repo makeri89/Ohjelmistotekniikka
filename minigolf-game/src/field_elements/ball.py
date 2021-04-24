@@ -12,7 +12,7 @@ class Ball(pygame.sprite.Sprite):
 
     Attributes:
         image: The image loaded from a file
-        rect: Pygame rect object attributes
+        rect: Pygame rect object from the image
     """
 
     def __init__(self, _x=0, _y=0, ball='blue'):
@@ -32,6 +32,12 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y = _y
 
     def move(self, x=0, y=0):
+        """Moves the ball with the move_ip method of pygame rect object
+
+        Args:
+            x (int, optional): The moving distance on x coordinates. Defaults to 0.
+            y (int, optional): The moving distance on y coordinates. Defaults to 0.
+        """
         self.rect.move_ip(x, y)
 
     def get_coordinates(self):

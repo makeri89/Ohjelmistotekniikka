@@ -13,7 +13,7 @@ class Element(pygame.sprite.Sprite):
 
     Attributes:
         image: The image loaded from a file
-        rect: Pygame rect object attributes
+        rect: Pygame rect object from the image
     """
 
     def __init__(self, _x=0, _y=0, elem=2):

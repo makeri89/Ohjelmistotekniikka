@@ -46,7 +46,8 @@ class BallHandler:
         """A method to handle the shot.
 
         Sets ball speed and shot power.
-        The total trip needs to be reset on every shot in order to calculate the shot distance.
+        The total trip needs to be reset on every shot
+        in order to calculate the shot distance.
         """
         if self.shot_allowed:
             self.ball_x, self.ball_y = self.ball.get_coordinates()
@@ -89,8 +90,6 @@ class BallHandler:
 
         self.total_trip += max(abs(self.x_dir/self.velocity),
                                abs(self.y_dir/self.velocity))
-
-        self.field.in_hole()
 
         if self.total_trip >= self.shot_power or self.velocity < 1:
             self.x_dir = 0

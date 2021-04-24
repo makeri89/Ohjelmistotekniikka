@@ -16,6 +16,7 @@
 | 16.4. |  1h  | Pallon värin valinta, testejä                                                                            |
 | 19.4. |  3h  | Pieniä muutoksia, testien suunnittelua                                                                   |
 | 20.4. |  3h  | BallHandler luokalle testejä, luokkakaavio                                                               |
-| 24.4. |  1h  |  Lisätty pelitulosten tallennus tietokantaan                                                             |
+| 24.4. |  1h  | Lisätty pelitulosten tallennus tietokantaan                                                              |
+| 24.4. |  2h  | Docstring kommentteja ja buginkorjaus: pelin päätyttyä menu toimii heti ja pygame ei tuota virhettä      |
 |       |      |                                                                                                          |
-| Yht.  | 55h  |                                                                                                          |
+| Yht.  | 57h  |                                                                                                          |
