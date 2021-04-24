@@ -19,7 +19,7 @@ Pelaaja voi
   - pelin tulokset tallentuvat tietokantaan ✔️
   - pelattujen pelien tiedot saa tulostettua tietokannasta ✔️
   - tietyn pelaajan tulokset saa tulostettua
-  - tietyn kentän tulokset saa tulotettua
+  - tietyn kentän tulokset saa tulostettua
   - tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
 
 ## Pelin erilaiset komponentit
