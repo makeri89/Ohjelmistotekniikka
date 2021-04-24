@@ -12,19 +12,15 @@ Peliä voi pelata yksinpelinä eli pelin tavoite on ainoastaan saada pallo reik�
 
 Pelaaja voi
 
-:heavy_check_mark: asettaa itselleen peliin nimimerkin
-
-:heavy_check_mark: pelata pelin minigolfia
-
-:heavy_check_mark: vaihtaa pallonsa väriä
-
-:o: tarkastella aiempia tuloksiaan eri kentillä
-
-  ✔️ pelin tulokset tallentuvat tietokantaan
-  ✔️ pelattujen pelien tiedot saa tulostettua tietokannasta
-  :o: tietyn pelaajan tulokset saa tulostettua
-  :o: tietyn kentän tulokset saa tulotettua
-  :o: tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
+- asettaa itselleen peliin nimimerkin ✔️
+- pelata pelin minigolfia ✔️
+- vaihtaa pallonsa väriä ✔️
+- tarkastella aiempia tuloksiaan eri kentillä
+  - pelin tulokset tallentuvat tietokantaan ✔️
+  - pelattujen pelien tiedot saa tulostettua tietokannasta ✔️
+  - tietyn pelaajan tulokset saa tulostettua
+  - tietyn kentän tulokset saa tulotettua
+  - tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
 
 ## Pelin erilaiset komponentit
 
