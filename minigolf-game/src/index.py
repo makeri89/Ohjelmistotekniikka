@@ -1,4 +1,5 @@
 from tkinter import Tk
+
 from ui.menu import Menu
 from main import main
 

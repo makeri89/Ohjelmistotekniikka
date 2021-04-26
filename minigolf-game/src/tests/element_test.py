@@ -1,6 +1,7 @@
 import unittest
 import pytest
-from field_elements.element import Element
+
+from entities.element import Element
 
 
 @pytest.mark.nonvisual

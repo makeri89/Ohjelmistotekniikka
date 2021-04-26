@@ -50,7 +50,7 @@ def coverage_html(ctx):
 
 @task
 def initialize_db(ctx):
-    ctx.run('python3 src/initialize_db.py')
+    ctx.run('python3 src/services/database/initialize_db.py')
 
 
 @task

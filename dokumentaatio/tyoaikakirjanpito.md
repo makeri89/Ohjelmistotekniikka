@@ -18,5 +18,6 @@
 | 20.4. |  3h  | BallHandler luokalle testejä, luokkakaavio                                                               |
 | 24.4. |  1h  | Lisätty pelitulosten tallennus tietokantaan                                                              |
 | 24.4. |  2h  | Docstring kommentteja ja buginkorjaus: pelin päätyttyä menu toimii heti ja pygame ei tuota virhettä      |
+| 26.4. |  2h  | Tiedostojen jakamista kansioihin ja importtien korjaus                                                   |
 |       |      |                                                                                                          |
-| Yht.  | 57h  |                                                                                                          |
+| Yht.  | 59h  |                                                                                                          |

@@ -1,6 +1,7 @@
 import unittest
 import pytest
-from shot_counter import ShotCounter
+
+from services.game.shot_counter import ShotCounter
 
 
 @pytest.mark.nonvisual

@@ -1,6 +1,7 @@
 import unittest
 import pytest
-from field_elements.field import Field
+
+from entities.field import Field
 
 field_map = [[1, 1, 1, 1, 1],
              [1, 6, 2, 3, 1],

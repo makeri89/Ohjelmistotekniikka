@@ -1,6 +1,7 @@
 import pygame
-from field_elements.element import Element
-from field_elements.ball import Ball
+
+from entities.element import Element
+from entities.ball import Ball
 
 
 class Field:

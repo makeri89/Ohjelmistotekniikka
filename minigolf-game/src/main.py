@@ -1,13 +1,14 @@
 import pygame
-from walls import Walls
-from field_elements.field import Field
-from field_elements.aim_line import AimLine
+
+from entities.field import Field
+from entities.aim_line import AimLine
 from levels.field_importer import get_field
-from ball_handler import BallHandler
-from shot_counter import ShotCounter
-from renderer import Renderer
-from game import Game
-from clock import Clock
+from services.game.ball_handler import BallHandler
+from services.game.shot_counter import ShotCounter
+from services.game.renderer import Renderer
+from services.game.game import Game
+from services.game.clock import Clock
+from services.game.walls import Walls
 from repositories.score_repository import ScoreRepository
 
 CELL_SIZE = 15

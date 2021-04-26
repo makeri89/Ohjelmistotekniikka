@@ -1,7 +1,9 @@
 import unittest
 import pytest
+
 import pygame
-from field_elements.aim_line import AimLine
+
+from entities.aim_line import AimLine
 
 
 @pytest.mark.visual

@@ -1,7 +1,8 @@
 import unittest
 import pytest
-from ball_handler import BallHandler
-from shot_counter import ShotCounter
+
+from services.game.ball_handler import BallHandler
+from services.game.shot_counter import ShotCounter
 
 
 class MockBall:
