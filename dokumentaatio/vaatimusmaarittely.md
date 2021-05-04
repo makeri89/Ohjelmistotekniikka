@@ -37,7 +37,7 @@ Elementtien vaikutukset palloon
 - seinästä pallo kimpoaa poispäin :heavy_check_mark:
 - hiekka hidastaa palloa
   - vaalea hiekka hidastaa vähän :heavy_check_mark:
-  - tumma hiekka hidastaa enemmäne :heavy_check_mark:
+  - tumma hiekka hidastaa enemmän :heavy_check_mark:
 
 ## Jatkokehitysideoita
 
