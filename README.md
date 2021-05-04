@@ -8,7 +8,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 
 ### Lataa sovellus täältä
 
-[Viikon 5 release](https://github.com/makeri89/Ohjelmistotekniikka/releases/tag/viikko5)
+[Viikon 6 release](https://github.com/makeri89/Ohjelmistotekniikka/releases/tag/viikko6)
 
 ### Dokumentaatio
 
