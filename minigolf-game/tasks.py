@@ -48,9 +48,14 @@ def coverage_html(ctx):
     ctx.run('coverage html')
 
 
+@task(coverage_html)
+def view_report(ctx):
+    ctx.run('firefox htmlcov/index.html')
+
+
 @task
 def initialize_db(ctx):
-    ctx.run('python3 src/services/database/initialize_db.py')
+    ctx.run('python3 src/initialize_db.py')
 
 
 @task

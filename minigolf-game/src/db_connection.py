@@ -1,10 +1,11 @@
 import os
 import sqlite3
 
+from config import DB_PATH
+
 dirname = os.path.dirname(__file__)
 
-connection = sqlite3.connect(os.path.join(
-    dirname, '../../..', 'data', 'db.sqlite'))
+connection = sqlite3.connect(DB_PATH)
 connection.row_factory = sqlite3.Row
 
 

@@ -70,6 +70,12 @@ tai selkeämmin luettava raportti
 poetry run invoke coverage-html
 ```
 
+Raportin saa avattua Firefox-selaimeen komennolla
+
+```
+poetry run invoke view-report
+```
+
 #### Sovellukselle on myös määritelty pylint tarkistus komennolla
 
 ```

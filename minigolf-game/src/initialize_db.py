@@ -1,5 +1,4 @@
-# For some reason pylint gets import error for this
-from db_connection import get_db_connection  # pylint: disable=import-error
+from db_connection import get_db_connection
 
 
 def create_tables(connection):

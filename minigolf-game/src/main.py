@@ -3,12 +3,12 @@ import pygame
 from entities.field import Field
 from entities.aim_line import AimLine
 from levels.field_importer import get_field
-from services.game.ball_handler import BallHandler
-from services.game.shot_counter import ShotCounter
-from services.game.renderer import Renderer
-from services.game.game import Game
-from services.game.clock import Clock
-from services.game.walls import Walls
+from services.ball_handler import BallHandler
+from services.shot_counter import ShotCounter
+from services.renderer import Renderer
+from services.game import Game
+from services.clock import Clock
+from services.walls import Walls
 from repositories.score_repository import ScoreRepository
 
 CELL_SIZE = 15

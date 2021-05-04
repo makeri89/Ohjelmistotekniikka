@@ -1,4 +1,4 @@
-from services.database.db_connection import get_db_connection
+from db_connection import get_db_connection
 
 
 class ScoreRepository:
