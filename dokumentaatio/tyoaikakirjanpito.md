@@ -19,5 +19,6 @@
 | 24.4. |  1h  | Lisätty pelitulosten tallennus tietokantaan                                                              |
 | 24.4. |  2h  | Docstring kommentteja ja buginkorjaus: pelin päätyttyä menu toimii heti ja pygame ei tuota virhettä      |
 | 26.4. |  2h  | Tiedostojen jakamista kansioihin ja importtien korjaus                                                   |
+| 4.5.  |  4h  | Lisätty dotenv, kentällä olevan hiekan vaikutus pallon liikkumiseen, käyttöohje, arkkitehtuurikuvausta   |
 |       |      |                                                                                                          |
-| Yht.  | 59h  |                                                                                                          |
+| Yht.  | 63h  |                                                                                                          |

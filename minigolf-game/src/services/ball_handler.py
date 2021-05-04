@@ -100,6 +100,7 @@ class BallHandler:
 
         self.water_hit()
         self.wall_hit()
+        self.check_light_sand_hits()
 
     def water_hit(self, test_helper=False):
         """A method to check if the ball is in water.
@@ -187,3 +188,33 @@ class BallHandler:
 
     def flip_x(self):
         self.x_dir = -self.x_dir
+
+    def check_light_sand_hits(self):
+        """A method to change the ball speed when it hits light sand.
+
+        x_float and y_float values are updated based on the velocity.
+        """
+        if self.field.check_light_sand_hits():
+            self.velocity = 130
+            self.total_trip += 3
+        else:
+            self.velocity = 100
+        self.x_float = (abs(self.x_dir)/self.velocity -
+                        abs(self.x_dir)//self.velocity)*100
+        self.y_float = (abs(self.y_dir)/self.velocity -
+                        abs(self.y_dir)//self.velocity)*100
+
+    def check_dark_sand_hits(self):
+        """A method to change the ball speed when it hits dark sand.
+
+        x_float and y_float values are updated based on the velocity.
+        """
+        if self.field.get_dark_sand_hits():
+            self.velocity = 150
+            self.total_trip += 5
+        else:
+            self.velocity = 100
+        self.x_float = (abs(self.x_dir)/self.velocity -
+                        abs(self.x_dir)//self.velocity)*100
+        self.y_float = (abs(self.y_dir)/self.velocity -
+                        abs(self.y_dir)//self.velocity)*100

@@ -8,6 +8,15 @@ Käyttäjä voi pelata simppeliä 2D-minigolfia, joka on ulkonäöltään jo ala
 
 Peliä voi pelata yksinpelinä eli pelin tavoite on ainoastaan saada pallo reikään mahdollisimman vähillä lyönneillä. Peliin voidaan myöhemmin lisätä mahdollisuus pelata joko tietokonetta tai toista pelaajaa vastaan.
 
+## Pelin erilaiset komponentit
+
+Pelikentiltä voi löytyä seuraavia elementtejä:
+
+- ruohoa
+- vettä
+- hiekkaa
+- seinäesteitä
+
 ## Toiminnallisuus
 
 Pelaaja voi
@@ -22,14 +31,13 @@ Pelaaja voi
   - tietyn kentän tulokset saa tulostettua
   - tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
 
-## Pelin erilaiset komponentit
+Elementtien vaikutukset palloon
 
-Pelikentiltä voi löytyä seuraavia elementtejä:
-
-- ruohoa
-- vettä
-- hiekkaa
-- seinäesteitä
+- vesi palauttaa pallon lyöntipaikkaan :heavy_check_mark:
+- seinästä pallo kimpoaa poispäin :heavy_check_mark:
+- hiekka hidastaa palloa
+  - vaalea hiekka hidastaa vähän :heavy_check_mark:
+  - tumma hiekka hidastaa enemmäne :heavy_check_mark:
 
 ## Jatkokehitysideoita
 

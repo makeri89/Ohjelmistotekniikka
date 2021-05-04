@@ -83,6 +83,12 @@ class Field:
     def get_walls(self):
         return self._walls
 
+    def get_light_sand(self):
+        return self._light_sand
+
+    def get_dark_sand(self):
+        return self._dark_sand
+
     def get_dimensions(self):
         return self._height*self.__cell_size, self._width*self.__cell_size
 
@@ -127,3 +133,9 @@ class Field:
             print('you won')
             return True
         return False
+
+    def check_light_sand_hits(self):
+        return pygame.sprite.spritecollideany(self._ball, self._light_sand)
+
+    def check_dark_sand_hits(self):
+        return pygame.sprite.spritecollideany(self._ball, self._dark_sand)

@@ -14,7 +14,7 @@ from repositories.score_repository import ScoreRepository
 CELL_SIZE = 15
 
 
-def main(name='Player 1', level=2, ball_color='blue'):
+def main(name='Player 1', level=4, ball_color='blue'):
     """The main function to launch the game.
 
     Initializes pygame, sets the display dimensions

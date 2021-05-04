@@ -32,6 +32,12 @@ class MockField:
     def in_hole(self):
         pass
 
+    def check_light_sand_hits(self):
+        return None
+
+    def check_dark_sand_hits(self):
+        return None
+
 
 mock_hit_ranges = {'right': {}, 'left': {}, 'top': {}, 'bottom': {}}
 
