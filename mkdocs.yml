@@ -1,0 +1,11 @@
+site_name: Minigolf docs
+nav:
+    - Etusivu: index.md
+    - Dokumenaatio:
+      - Käyttöohje: kayttoohje
+      - Arkkitehtuuri: arkkitehtuuri
+      - Työaikakirjanpito: tyoaikakirjanpito
+      - Vaatimusmäärittely: vaatimusmaarittely
+repo_url: https://github.com/makeri89/Ohjelmistotekniikka
+theme: readthedocs
+docs_dir: dokumentaatio

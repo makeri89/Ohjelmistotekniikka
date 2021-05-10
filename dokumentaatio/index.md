@@ -6,20 +6,18 @@ Peli on Ohjelmistotekniikka-kurssiin kuuluva projektityö, joka kasvaa pikkuhilj
 
 Peli toimii Python-versiolla `3.6` tai uudemmalla.
 
-### Lataa sovellus täältä
+## Lataa sovellus täältä
 
 [Viikon 6 release](https://github.com/makeri89/Ohjelmistotekniikka/releases/tag/viikko6)
 
-### Dokumentaatio
+## Dokumentaatio
 
-- [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
-- [Työaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
-- [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
-- [Käyttöohje](/dokumentaatio/kayttoohje.md)
+- [Vaatimusmäärittely](vaatimusmaarittely)
+- [Työaikakirjanpito](tyoaikakirjanpito)
+- [Arkkitehtuurikuvaus](arkkitehtuuri)
+- [Käyttöohje](kayttoohje)
 
-Dokumentaatio on luettavissa myös [täällä](https://makeri89.github.io/Ohjelmistotekniikka/)
-
-### Asennus
+## Asennus
 
 1. Siirry komentorivillä minigolf-game kansioon
 
@@ -41,27 +39,27 @@ poetry run invoke initialize-db
 poetry run invoke start
 ```
 
-### Komentorivikomennot
+## Komentorivikomennot
 
-#### Ohjelman voi suorittaa komennolla
+### Ohjelman voi suorittaa komennolla
 
 ```
 poetry run invoke start
 ```
 
-#### Tuloshistorian saa tulostettua komennolla
+### Tuloshistorian saa tulostettua komennolla
 
 ```
 poetry run invoke print-scores
 ```
 
-#### Ohjelman testit voi suorittaa komennolla
+### Ohjelman testit voi suorittaa komennolla
 
 ```
 poetry run invoke test
 ```
 
-#### Testikattavuusraportin saa luotua komennolla
+### Testikattavuusraportin saa luotua komennolla
 
 ```
 poetry run invoke coverage-report
@@ -79,7 +77,7 @@ Raportin saa avattua Firefox-selaimeen komennolla
 poetry run invoke view-report
 ```
 
-#### Sovellukselle on myös määritelty pylint tarkistus komennolla
+### Sovellukselle on myös määritelty pylint tarkistus komennolla
 
 ```
 poetry run invoke lint
