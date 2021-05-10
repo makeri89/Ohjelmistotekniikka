@@ -33,11 +33,11 @@ Pelaaja voi
 
 Elementtien vaikutukset palloon
 
-- vesi palauttaa pallon lyöntipaikkaan :heavy_check_mark:
-- seinästä pallo kimpoaa poispäin :heavy_check_mark:
+- vesi palauttaa pallon lyöntipaikkaan ✔️
+- seinästä pallo kimpoaa poispäin ✔️
 - hiekka hidastaa palloa
-  - vaalea hiekka hidastaa vähän :heavy_check_mark:
-  - tumma hiekka hidastaa enemmän :heavy_check_mark:
+  - vaalea hiekka hidastaa vähän ✔️
+  - tumma hiekka hidastaa enemmän ✔️
 
 ## Jatkokehitysideoita
 
