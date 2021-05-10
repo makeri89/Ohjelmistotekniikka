@@ -17,7 +17,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 - [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 - [Käyttöohje](/dokumentaatio/kayttoohje.md)
 
-Dokumentaatio on luettavissa myös [täällä](https://makeri89.github.io/Ohjelmistotekniikka/)
+Dokumentaatio on luettavissa myös [täällä](https://makeri89.github.io/Ohjelmistotekniikka/).
 
 ### Asennus
 
