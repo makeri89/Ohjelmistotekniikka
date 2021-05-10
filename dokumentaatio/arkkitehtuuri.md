@@ -27,7 +27,7 @@ Peliin voidaan vielä lisätä visuaalinen käyttöliittymä tulosten tarkastelu
 
 ### Tietokanta
 
-Tietokantatiedoston nimi on määritelty [.env](/minigolfgame/.env) -tiedostossa, joten sitä on tarvittaessa hyvin kätevää vaihtaa.
+Tietokantatiedoston nimi on määritelty [.env](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/minigolf-game/.env) -tiedostossa, joten sitä on tarvittaessa hyvin kätevää vaihtaa.
 
 Tietokannassa tiedot tallennetaan `scores` -tauluun, joka on seuraavanlainen:
 
@@ -36,7 +36,7 @@ Tietokannassa tiedot tallennetaan `scores` -tauluun, joka on seuraavanlainen:
 |   1   | makeri  |   3    |
 |   2   |  makeri |   5    |
 
-Tietokanta alustetaan [initialize-db.py](/minigolfgame/src/initialize_db.py) -tiedostossa.
+Tietokanta alustetaan [initialize-db.py](https://github.com/makeri89/Ohjelmistotekniikka/blob/main/minigolf-game/src/initialize_db.py) -tiedostossa.
 
 ## Toiminnallisuudet
 

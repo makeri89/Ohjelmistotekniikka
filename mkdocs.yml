@@ -9,3 +9,5 @@ nav:
 repo_url: https://github.com/makeri89/Ohjelmistotekniikka
 theme: readthedocs
 docs_dir: dokumentaatio
+markdown_extensions:
+  - sane_lists

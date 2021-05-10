@@ -21,5 +21,6 @@
 | 26.4. |  2h  | Tiedostojen jakamista kansioihin ja importtien korjaus                                                   |
 | 4.5.  |  4h  | Lisätty dotenv, kentällä olevan hiekan vaikutus pallon liikkumiseen, käyttöohje, arkkitehtuurikuvausta   |
 | 10.5. |  1h  | Lisätty uusi näyttö, joka kertoo pelin jälkeen peliin käytetyttyjen lyöntien määrän                      |
+| 10.5. |  1h  | Lisätty MkDocs                                                                                           |
 |       |      |                                                                                                          |
-| Yht.  | 64h  |                                                                                                          |
+| Yht.  | 65h  |                                                                                                          |
