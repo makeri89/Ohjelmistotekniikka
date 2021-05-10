@@ -5,4 +5,6 @@ __pycache__
 /laskarit/viikko2/unicafe/htmlcov
 .coverage
 htmlcov
+/minigolf-game/data/db.sqlite
+/minigolf-game/data/test-db.sqlite
 site/
