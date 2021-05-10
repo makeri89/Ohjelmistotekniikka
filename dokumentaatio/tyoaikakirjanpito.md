@@ -20,5 +20,6 @@
 | 24.4. |  2h  | Docstring kommentteja ja buginkorjaus: pelin päätyttyä menu toimii heti ja pygame ei tuota virhettä      |
 | 26.4. |  2h  | Tiedostojen jakamista kansioihin ja importtien korjaus                                                   |
 | 4.5.  |  4h  | Lisätty dotenv, kentällä olevan hiekan vaikutus pallon liikkumiseen, käyttöohje, arkkitehtuurikuvausta   |
+| 10.5. |  1h  | Lisätty uusi näyttö, joka kertoo pelin jälkeen peliin käytetyttyjen lyöntien määrän                      |
 |       |      |                                                                                                          |
-| Yht.  | 63h  |                                                                                                          |
+| Yht.  | 64h  |                                                                                                          |

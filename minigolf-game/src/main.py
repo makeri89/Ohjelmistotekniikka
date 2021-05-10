@@ -10,6 +10,7 @@ from services.game import Game
 from services.clock import Clock
 from services.walls import Walls
 from repositories.score_repository import ScoreRepository
+from ui.end_screen import EndScreen
 
 CELL_SIZE = 15
 
@@ -18,8 +19,10 @@ def main(name='Player 1', level=4, ball_color='blue'):
     """The main function to launch the game.
 
     Initializes pygame, sets the display dimensions
-    and initializes all the objects needed
-    to run the game.
+    and initializes all the objects needed to run the game.
+
+    When the game ends successfully, the score is saved
+    and a winning end screen is displayed for 5 seconds.
 
     Args:
         name (str, optional): The name the player enters in the menu. Defaults to 'Player 1'.
@@ -51,7 +54,10 @@ def main(name='Player 1', level=4, ball_color='blue'):
     game.run()
 
     if game.finished:
-        score_repository.add_score(name, level, counter.get_shots())
+        score = counter.get_shots()
+        score_repository.add_score(name, level, score)
+        end_screen = EndScreen()
+        end_screen.draw_endscreen(score)
 
 
 if __name__ == '__main__':
