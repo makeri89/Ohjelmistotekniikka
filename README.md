@@ -16,6 +16,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 - [Työaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
 - [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 - [Käyttöohje](/dokumentaatio/kayttoohje.md)
+- [Testausdokumentti](/dokumentaatio/testaus.md)
 
 Dokumentaatio on luettavissa myös [täällä](https://makeri89.github.io/Ohjelmistotekniikka/).
 

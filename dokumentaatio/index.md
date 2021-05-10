@@ -16,6 +16,7 @@ Peli toimii Python-versiolla `3.6` tai uudemmalla.
 - [Työaikakirjanpito](tyoaikakirjanpito)
 - [Arkkitehtuurikuvaus](arkkitehtuuri)
 - [Käyttöohje](kayttoohje)
+- [Testausdokumentti](testaus)
 
 ## Asennus
 

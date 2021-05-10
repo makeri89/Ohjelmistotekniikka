@@ -21,12 +21,16 @@ class Field:
     """
 
     def __init__(self, field_map, ball_color='blue'):
-        """Constructor that creates sprite groups
-        for all the different elements on the field.
+        """A constructor that creates sprite groups.
+
+        All the different elements on the field are in separate groups.
 
         Args:
-            field_map: The map of the field as a matrix where different
-            values correspond to different elements.
+            field_map:
+                The map of the field as a matrix where different
+                values correspond to different elements.
+            ball_color:
+                The color of the ball. Defaults to blue.
         """
         self.__cell_size = 15
         self._height = len(field_map)
@@ -99,16 +103,6 @@ class Field:
             display: The current pygame screen
         """
         self._all_elements.draw(display)
-
-    def check_wall_hits(self):
-        """Checks if the ball has hit the wall
-
-        Returns:
-            If there is contact, it returns the ball, else None.
-        """
-        contact = pygame.sprite.spritecollide(
-            self._ball, self._walls, dokill=False)
-        return contact
 
     def check_water_hits(self, test_helper):
         """Checks if the ball has gone to water

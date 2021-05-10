@@ -6,5 +6,5 @@ __pycache__
 .coverage
 htmlcov
 /minigolf-game/data/db.sqlite
-/minigolf-game/data/test-db.sqlite
+/minigolf-game/data/test_db.sqlite
 site/

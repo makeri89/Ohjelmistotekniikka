@@ -39,7 +39,10 @@ class MockField:
         return None
 
 
-mock_hit_ranges = {'right': {}, 'left': {}, 'top': {}, 'bottom': {}}
+mock_hit_ranges = {'right': {4: [(3, 5)]},
+                   'left': {2: [(5, 7)]},
+                   'top': {5: [(2, 3)]},
+                   'bottom': {4: [(4, 5)]}}
 
 
 @pytest.mark.nonvisual
@@ -118,3 +121,27 @@ class TestBallHandler(unittest.TestCase):
         self.assertEqual(self.ball_handler.y_dir, 1)
         self.ball_handler.check_outer_walls(20, 172)
         self.assertEqual(self.ball_handler.y_dir, -1)
+
+    def test_hitting_a_wall_from_left_works(self):
+        self.ball.set_location(17, 80)
+        self.ball_handler.x_dir = 1
+        self.ball_handler.wall_hit()
+        self.assertEqual(self.ball_handler.x_dir, -1)
+
+    def test_hitting_a_wall_from_right_works(self):
+        self.ball.set_location(73, 50)
+        self.ball_handler.x_dir = -1
+        self.ball_handler.wall_hit()
+        self.assertEqual(self.ball_handler.x_dir, 1)
+
+    def test_hitting_a_wall_from_top_works(self):
+        self.ball.set_location(25, 62)
+        self.ball_handler.y_dir = 1
+        self.ball_handler.wall_hit()
+        self.assertEqual(self.ball_handler.y_dir, -1)
+
+    def test_hitting_a_wall_from_bottom_works(self):
+        self.ball.set_location(49, 73)
+        self.ball_handler.y_dir = -1
+        self.ball_handler.wall_hit()
+        self.assertEqual(self.ball_handler.y_dir, 1)
