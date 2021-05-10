@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Arkkitehtuurikuvaus - Minigolf docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Arkkitehtuurikuvaus";
+    var mkdocs_page_input_path = "arkkitehtuuri.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Minigolf docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Etusivu</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Dokumenaatio</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../kayttoohje">Käyttöohje</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href=".">Arkkitehtuuri</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../tyoaikakirjanpito">Työaikakirjanpito</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../vaatimusmaarittely">Vaatimusmäärittely</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Minigolf docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Arkkitehtuurikuvaus</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/makeri89/Ohjelmistotekniikka/edit/master/docs/arkkitehtuuri.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="arkkitehtuurikuvaus">Arkkitehtuurikuvaus</h1>
+<h2 id="rakenne">Rakenne</h2>
+<p>Ohjelman rakennetta kuvaava pakkauskaavio on seuraavanlainen:</p>
+<p><img alt="Pakkauskaavio" src="../kuvat/luokkakaavio.png" /></p>
+<p>Pakkaus ui sisältää valikkoon liittyvät visuaaliset komponentit, pakkaus services sisältää sovelluslogiikasta huolehtivat komponentit, pakkaus entities taas sisältää pelin sisäiset oliot ja pakkaus repositories sisältää tiedon tallentamisesta vastuussa olevat toiminnallisuudet.</p>
+<h2 id="kayttoliittyma">Käyttöliittymä</h2>
+<p>Peli sisältää kaksi erilaista näkymää:</p>
+<ul>
+<li>Aloitusvalikko</li>
+<li>Peli</li>
+</ul>
+<p>Aloitusvalikosta voi asettaa itselleen nimimerkin, valita tason ja pallon värin sekä aloittaa uuden pelin. Valikko on toteutettu omana <code>Menu</code> -luokkanaan.</p>
+<p>Pelinäkymässä lyödään minigolfille ominaiseen tapaan palloa reikään. Pelinäkymä rakentuu useasta luokasta, joista osa vastaa pelin logiikasta ja osa pygamen visuaalisista elementeistä. Pelin suorittamisesta vastaa pääasiassa <code>Game</code> -luokka, joka kutsuu muiden luokkien metodeita pelin tapahtumien perusteella.</p>
+<p>Peliin voidaan vielä lisätä visuaalinen käyttöliittymä tulosten tarkastelua varten.</p>
+<h2 id="tietojen-tallentaminen">Tietojen tallentaminen</h2>
+<p><code>ScoreRepository</code> -luokka huolehtii tietojen tallentamisesta SQLite-tietokantaan. Tietokantaan tallennetaan jokaisen pelatun pelin jälkeen pelaajan nimi, tulos ja kentän numero.</p>
+<h3 id="tietokanta">Tietokanta</h3>
+<p>Tietokantatiedoston nimi on määritelty <a href="/minigolfgame/.env">.env</a> -tiedostossa, joten sitä on tarvittaessa hyvin kätevää vaihtaa.</p>
+<p>Tietokannassa tiedot tallennetaan <code>scores</code> -tauluun, joka on seuraavanlainen:</p>
+<table>
+<thead>
+<tr>
+<th align="center">level</th>
+<th align="center"> player</th>
+<th align="center"> score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">makeri</td>
+<td align="center">3 </td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"> makeri</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<p>Tietokanta alustetaan <a href="/minigolfgame/src/initialize_db.py">initialize-db.py</a> -tiedostossa.</p>
+<h2 id="toiminnallisuudet">Toiminnallisuudet</h2>
+<h3 id="pelin-pelaaminen-onnistuneesti">Pelin pelaaminen onnistuneesti</h3>
+<p>Kun aloitusvalikossa pelaaja syöttää nimimerkikseen 'makeri', valitsee tason 2 ja sinisen pallon, etenee pelin pelaaminen näin:</p>
+<p><img alt="Sekvenssikaavio" src="../kuvat/playing_sd.png" /></p>
+<p>Kun pelaaja painaa <code>Start new game</code> -painiketta, kutsutaan <code>main</code>-funktiota annetuilla tiedoilla pelaajan nimestä, tasosta ja pallon väristä. <code>main</code>-funktio luo uuden <code>Game</code> -luokan olion, jonka sisällä luodaan pelin pelaamiseen vaadittavat oliot. <code>Game</code> tarkistaa jatkuvasti, onko pallo päätynyt reikään eli onko peli päättynyt. Kun peli päättyy, se kutsuu <code>ScoreRepository</code> -luokan metodia <code>add_score</code>, joka tallentaa pelin tuloksen tietokantaan. Peli palaa takaisin aloitusvalikkoon.</p>
+<p>Kuvausta on selkeytetty jättämällä kaaviosta pois useimpien Game-luokan käyttämien olioiden luominen.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/makeri89/Ohjelmistotekniikka/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
