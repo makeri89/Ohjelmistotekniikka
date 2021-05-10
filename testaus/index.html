@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Työaikakirjanpito - Minigolf docs</title>
+  <title>Testausdokumentti - Minigolf docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Ty\u00f6aikakirjanpito";
-    var mkdocs_page_input_path = "tyoaikakirjanpito.md";
+    var mkdocs_page_name = "Testausdokumentti";
+    var mkdocs_page_input_path = "testaus.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -57,11 +57,11 @@
                     </li>
                     <li class="toctree-l1"><a class="" href="../arkkitehtuuri">Arkkitehtuuri</a>
                     </li>
-                    <li class="toctree-l1"><a class="" href=".">Työaikakirjanpito</a>
+                    <li class="toctree-l1"><a class="" href="../tyoaikakirjanpito">Työaikakirjanpito</a>
                     </li>
                     <li class="toctree-l1"><a class="" href="../vaatimusmaarittely">Vaatimusmäärittely</a>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../testaus">Testausdokumentti</a>
+                    <li class="toctree-l1"><a class="" href=".">Testausdokumentti</a>
                     </li>
                 </ul>
       </div>
@@ -85,10 +85,10 @@
     
       
     
-    <li>Työaikakirjanpito</li>
+    <li>Testausdokumentti</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/makeri89/Ohjelmistotekniikka/edit/master/docs/tyoaikakirjanpito.md"
+        <a href="https://github.com/makeri89/Ohjelmistotekniikka/edit/master/docs/testaus.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -99,133 +99,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="tyoaikakirjanpito">Työaikakirjanpito</h1>
-<table>
-<thead>
-<tr>
-<th align="center">pvm</th>
-<th align="center">aika</th>
-<th align="left">mitä tein</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">16.3.</td>
-<td align="center">4h</td>
-<td align="left">ohjelman ensimmäiset suunnitelmat ja ensimmäisten komponenttien lisäys</td>
-</tr>
-<tr>
-<td align="center">17.3.</td>
-<td align="center">8h</td>
-<td align="left">lisätty toiminnallisuuksia: luo kentän graafisesti annetusta matriisista, palloa voi lyödä alkeellisesti</td>
-</tr>
-<tr>
-<td align="center">18.3.</td>
-<td align="center">5h</td>
-<td align="left">koodin refaktorointia ja simppeli TkInter menu, josta pelin voi käynnistää</td>
-</tr>
-<tr>
-<td align="center">19.3.</td>
-<td align="center">4h</td>
-<td align="left">koodin refaktorointia ja docstringejä</td>
-</tr>
-<tr>
-<td align="center">20.3.</td>
-<td align="center">2h</td>
-<td align="left">bugin korjaus ja muuta pientä</td>
-</tr>
-<tr>
-<td align="center">22.3.</td>
-<td align="center">2h</td>
-<td align="left">refaktorointia again ja tähtäysviiva lyönneille</td>
-</tr>
-<tr>
-<td align="center">25.3.</td>
-<td align="center">5h</td>
-<td align="left">törmäyksen tunnistuksen rakentamista ja suunnittelua</td>
-</tr>
-<tr>
-<td align="center">29.3.</td>
-<td align="center">4h</td>
-<td align="left">törmäyksen tunnistus valmis</td>
-</tr>
-<tr>
-<td align="center">7.4.</td>
-<td align="center">4h</td>
-<td align="left">pallon liikkumisen suunnittelua ja pieniä muutoksia</td>
-</tr>
-<tr>
-<td align="center">9.4.</td>
-<td align="center">3h</td>
-<td align="left">pallon liikkumista</td>
-</tr>
-<tr>
-<td align="center">10.4.</td>
-<td align="center">4h</td>
-<td align="left">pallon liikkumista, lyöntilaskuri, kentän valinta</td>
-</tr>
-<tr>
-<td align="center">16.4.</td>
-<td align="center">1h</td>
-<td align="left">Pallon värin valinta, testejä</td>
-</tr>
-<tr>
-<td align="center">19.4.</td>
-<td align="center">3h</td>
-<td align="left">Pieniä muutoksia, testien suunnittelua</td>
-</tr>
-<tr>
-<td align="center">20.4.</td>
-<td align="center">3h</td>
-<td align="left">BallHandler luokalle testejä, luokkakaavio</td>
-</tr>
-<tr>
-<td align="center">24.4.</td>
-<td align="center">1h</td>
-<td align="left">Lisätty pelitulosten tallennus tietokantaan</td>
-</tr>
-<tr>
-<td align="center">24.4.</td>
-<td align="center"> 2h</td>
-<td align="left">Docstring kommentteja ja buginkorjaus: pelin päätyttyä menu toimii heti ja pygame ei tuota virhettä</td>
-</tr>
-<tr>
-<td align="center">26.4.</td>
-<td align="center">2h</td>
-<td align="left">Tiedostojen jakamista kansioihin ja importtien korjaus</td>
-</tr>
-<tr>
-<td align="center">4.5.</td>
-<td align="center">4h</td>
-<td align="left">Lisätty dotenv, kentällä olevan hiekan vaikutus pallon liikkumiseen, käyttöohje, arkkitehtuurikuvausta</td>
-</tr>
-<tr>
-<td align="center">10.5.</td>
-<td align="center">1h</td>
-<td align="left">Lisätty uusi näyttö, joka kertoo pelin jälkeen peliin käytettyjen lyöntien määrän</td>
-</tr>
-<tr>
-<td align="center">10.5.</td>
-<td align="center">1h</td>
-<td align="left">Lisätty MkDocs</td>
-</tr>
-<tr>
-<td align="center"> 10.5.</td>
-<td align="center">2h</td>
-<td align="left">Lisää testejä sekä testausdokumettia aloitettu</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">Yht.</td>
-<td align="center">65h</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+                <h1 id="testausdokumentti">Testausdokumentti</h1>
+<p>Peliä on testattu yksikkö- ja integraatiotesteillä unittestiä käyttäen.</p>
+<h2 id="yksikko-ja-integraatiotestaus">Yksikkö- ja integraatiotestaus</h2>
+<h3 id="sovelluslogiikka">Sovelluslogiikka</h3>
+<p>Pelin komponenttien luomisesta vastaavia <code>Ball</code> ja <code>Element</code> -luokkia testataan omilla testiluokillaan. <code>BallTest</code> -testiluokka testaa, että pallo liikkuu oikein. <code>ElementTest</code> -testiluokassa taas testaataan elementtien kuvatiedostojen oikea polku.</p>
+<p>Kentän luomisesta vastaavaa <code>Field</code> -luokkaa testataan omassa <code>FieldTest</code> -testiluokassaan. Luokasta testataan, luoko se oikean määrän kutakin kentän elementtiä sekä asettaako se itselleen oikeat mittasuhteet.</p>
+<p>Ainoat visuaaliset testit koskevat <code>AimLine</code> -luokkaa. Sen testiluokassa <code>TestAimLine</code> testataan, piirtyykö tähtäysviiva oikeansuuntaisesti kentälle.</p>
+<p>Lyöntien laskemisesta vastaava luokka <code>ShotCounter</code> testataan omassa <code>TestShotCounter</code> -testiluokassa. Testauksen kohteena ovat laskurin kasvaminen ja nollaus.</p>
+<p>Kentältä seinien paikallistamisesta vastaavalle <code>Walls</code> -luokalle on määritelty testit <code>TestWalls</code> -testiluokassa. Testiluokalle annetaan kuvitteellisen kentän sisältö ja testataan, palauttaako luokan <code>get_contact_points()</code> -metodi seinien sijainnit oikein.</p>
+<p>Monia erikseen testattuja komponentteja käyttävä <code>BallHandler</code> -luokka testataan <code>TestBallHandler</code> -testiluokassa, jossa <code>Ball</code> ja <code>Field</code> -luokille luodaan testiversiot <code>MockBall</code> ja <code>MockField</code>. Testiluokka testaa lyönnin vaikutukset ja pallon liikkumista kentällä. Testataan, että lyöntiä ei tapahdu, kun se ei ole sallittua ja että pallo pysähtyy haluttuun kohtaan. Testataan myös pallon seiniin osumisen vaikutukset.</p>
+<h3 id="repositorio-luokka">Repositorio-luokka</h3>
+<p>Tietojen pysyväistallennuksesta vastaavaa <code>ScoreRepository</code> -luokkaa testataan omalla <code>TestScoreRepository</code> -testiluokalla. Testeissä käytetään oma testitietokantaa, joka on määritelty <em>.env.test</em>-tiedostossa. Luokan kaikkia metodeita testataan erikseen.</p>
+<h2 id="testauskattavuus">Testauskattavuus</h2>
+<p>Testien haaraumakattavuus on 79%.</p>
+<p>TODO: kuva coverage raportista</p>
+<p>Testien ulkopuolelle on jäänyt <code>Game</code> -luokka, joka ainoastaan pyörittää pygamen tapahtumia.</p>
               
             </div>
           </div>
