@@ -54,10 +54,5 @@ def view_report(ctx):
 
 
 @task
-def initialize_db(ctx):
+def build(ctx):
     ctx.run('python3 src/initialize_db.py')
-
-
-@task
-def print_scores(ctx):
-    ctx.run('python3 src/db_handler.py')

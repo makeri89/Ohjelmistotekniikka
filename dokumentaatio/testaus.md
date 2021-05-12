@@ -24,8 +24,18 @@ Tietojen pysyväistallennuksesta vastaavaa `ScoreRepository` -luokkaa testataan 
 
 ## Testauskattavuus
 
-Testien haaraumakattavuus on 79%.
+Testien haarautumakattavuus on 79%.
 
 TODO: kuva coverage raportista
 
 Testien ulkopuolelle on jäänyt `Game` -luokka, joka ainoastaan pyörittää pygamen tapahtumia.
+
+## Järjestelmätestaus
+
+Sovellusta on testattu järjestelmätasolla manuaalisesti
+
+### Asennus ja konfigurointi
+
+Pelin käyttöä on testattu sekä omalla koneella, jossa on käytössä Ubuntu 20.04 että yliopiston virtuaalikoneella asentamalla se käyttöohjeen kuvaamalla tavalla.
+
+Pelin toimintaa on testattu erilaisilla syötteillä ja valinnoilla valikossa sekä erilaisilla lyöntikohdilla ja lyöntimäärillä pelissä. On myös testattu erilaisilla tietokantojen nimillä.

@@ -21,7 +21,7 @@ poetry install
 ```
 
 ```
-poetry run invoke initialize-db
+poetry run invoke build
 ```
 
 Näiden komentojen jälkeen pelin voi käynnistää komennolla
@@ -56,8 +56,12 @@ Kun pallo menee reikään, pelinäkymä sulkeutuu ja aloitusvalikko aktivoituu. 
 
 ## Tulosten tarkastelu
 
-Muutaman pelin pelattuaan on hyvä nähdä omaa tuloshistoriaansa. Kaikki tulokset kaikilta kentiltä saa tulostettua terminaaliin komennolla
+Muutaman pelin pelattuaan on hyvä nähdä omaa tuloshistoriaansa. Tuloksia pääsee tarkastelemaan päävalikosta `View score history` -painikkeella.
 
-```
-poetry run invoke print-scores
-```
+Tuloshistoria aukeaa omaan ikkunaansa:
+
+![scores](./kuvat/scoretable.png)
+
+Tuloksia voi suodattaa pelaajan nimellä syöttämällä nimen sille varattuun kenttään ja painamalla `Filter by player` -painiketta. Kentän mukaan tulosten suodatus onnistuu valitsemalla pudotusvalikosta haluttu kenttä ja painamalla `Filter by level` -painiketta.
+
+Tuloslistan saa palautettua näyttämään kaikki tulokset `Reset` -painikkeella.

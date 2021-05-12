@@ -1,15 +1,8 @@
-from tkinter import Tk
-
 from ui.menu import Menu
-from main import main
+from ui.score_table import open_table
+from services.main import main
 
-window = Tk()
-window.title('Main menu')
-window['bg'] = '#13a713'
-
-ui = Menu(window, main)
-ui.initialize()
+ui = Menu(main, open_table)
 
 if __name__ == '__main__':
-    window.mainloop()
-    # main()
+    ui.run()
