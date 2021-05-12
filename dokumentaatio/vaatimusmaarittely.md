@@ -26,10 +26,10 @@ Pelaaja voi
 - vaihtaa pallonsa väriä ✔️
 - tarkastella aiempia tuloksiaan eri kentillä
   - pelin tulokset tallentuvat tietokantaan ✔️
-  - pelattujen pelien tiedot saa tulostettua tietokannasta ✔️
-  - tietyn pelaajan tulokset saa tulostettua
-  - tietyn kentän tulokset saa tulostettua
-  - tuloksien tarkastelu onnistuu graafisella käyttöliittymällä
+  - pelattuja pelejä tietokannassa saa tarkasteltua ✔️
+  - tietyn pelaajan tuloksia saa tarkasteltua ✔️
+  - tietyn kentän tuloksia saa tarkasteltua ✔️
+  - tuloksien tarkastelu onnistuu graafisella käyttöliittymällä ✔️
 
 Elementtien vaikutukset palloon
 
