@@ -33,7 +33,7 @@ poetry install
 3. Ensimmäisellä suorituskerralla alusta tietokanta tulosten tallennusta varten
 
 ```
-poetry run invoke initialize-db
+poetry run invoke build
 ```
 
 4. Käynnistä sovellus komennolla
