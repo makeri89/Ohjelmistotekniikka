@@ -8,16 +8,17 @@ class Field:
     """A class for creating the field.
 
     Attributes:
-        height: The height of the field
-        width: The width of the field
-        holes: Pygame sprite group for the hole(s)
-        walls: Pygame sprite group for the walls
-        grass: Pygame sprite group for the grass
-        water: Pygame sprite group for the water
-        light_sand: Pygame sprite group for light sand
-        dark_sand: Pygame sprite group for dark sand
-        all_elements: A combined group of all of the other sprite groups
-        ball: A sprite object for the ball
+        height: The height of the field.
+        width: The width of the field.
+        holes: Pygame sprite group for the hole(s).
+        walls: Pygame sprite group for the walls.
+        grass: Pygame sprite group for the grass.
+        water: Pygame sprite group for the water.
+        light_sand: Pygame sprite group for light sand.
+        dark_sand: Pygame sprite group for dark sand.
+        all_elements:
+            A combined group of all of the other sprite groups.
+        ball: A sprite object for the ball.
     """
 
     def __init__(self, field_map, ball_color='blue'):
@@ -48,10 +49,10 @@ class Field:
         self.place_elements(field_map)
 
     def place_elements(self, field_map):
-        """Method to create all the elements in their correct location based on the map
+        """Creates all the elements on the field.
 
         Args:
-            field_map: Locations for the elements
+            field_map: Locations for the elements.
         """
         for y_coord in range(self._height):
             for x_coord in range(self._width):
@@ -97,15 +98,15 @@ class Field:
         return self._height*self.__cell_size, self._width*self.__cell_size
 
     def update(self, display):
-        """Updates all sprites of the class
+        """Updates all sprites of the class.
 
         Args:
-            display: The current pygame screen
+            display: The current pygame screen.
         """
         self._all_elements.draw(display)
 
     def check_water_hits(self, test_helper):
-        """Checks if the ball has gone to water
+        """Checks if the ball has gone to water.
 
         Returns:
             If there is contact, it returns the ball, else None.
@@ -114,12 +115,12 @@ class Field:
         return contact
 
     def in_hole(self):
-        """A method to check if the hole ands the ball are colliding.
+        """Checks if the hole ands the ball are colliding.
 
         Uses a circle ratio instead of the default rectangle.
 
         Returns:
-            boolean: If the ball is in the hole, it returns True, else False
+            If the ball is in the hole returns True, else False.
         """
         in_hole = pygame.sprite.spritecollide(
             self._ball, self._holes, False, pygame.sprite.collide_circle_ratio(0.3))

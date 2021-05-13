@@ -20,14 +20,17 @@ def main(name='Player 1', level=4, ball_color='blue'):
 
     Initializes pygame, sets the display dimensions
     and initializes all the objects needed to run the game.
-
     When the game ends successfully, the score is saved
     and a winning end screen is displayed for 5 seconds.
 
     Args:
-        name (str, optional): The name the player enters in the menu. Defaults to 'Player 1'.
-        level (int, optional): The level number the player chose. Defaults to 2.
-        ball_color (str, optional): The ball color the player chose. Defaults to 'blue'.
+        name (str, optional):
+            The name the player enters in the menu.
+            Defaults to 'Player 1'.
+        level (int, optional):
+            The level number the player chose. Defaults to 2.
+        ball_color (str, optional):
+            The ball color the player chose. Defaults to 'blue'.
     """
     field_map = get_field(int(level))
     height = len(field_map)

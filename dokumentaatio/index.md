@@ -31,7 +31,7 @@ poetry install
 3. Ensimmäisellä suorituskerralla alusta tietokanta tulosten tallennusta varten
 
 ```
-poetry run invoke initialize-db
+poetry run invoke build
 ```
 
 4. Käynnistä sovellus komennolla
@@ -46,12 +46,6 @@ poetry run invoke start
 
 ```
 poetry run invoke start
-```
-
-### Tuloshistorian saa tulostettua komennolla
-
-```
-poetry run invoke print-scores
 ```
 
 ### Ohjelman testit voi suorittaa komennolla

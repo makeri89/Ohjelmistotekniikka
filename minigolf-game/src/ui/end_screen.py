@@ -8,7 +8,7 @@ class EndScreen:
     """
 
     def __init__(self):
-        """A constructor that sets a new pygame display and fonts
+        """Sets a new pygame display and fonts.
         """
         pygame.init()
         self._display = pygame.display.set_mode((600, 250))
@@ -39,9 +39,3 @@ class EndScreen:
             pygame.display.update()
             time.sleep(1)
         pygame.quit()
-
-
-# Used for testing
-if __name__ == '__main__':
-    es = EndScreen()
-    es.draw_endscreen(3)

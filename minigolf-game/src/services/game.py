@@ -5,16 +5,26 @@ class Game:
     """A class for the loop running the game.
 
     Attributes:
-        run: Starts the loop for the game.
+        clock: A pygame clock.
+        display: A pygame display.
+        counter: Used to count the shots.
+        field: Sets the actual field for the game.
+        renderer: Handles the rendering of pygame objects.
+        ball_handler: Handles ball movement on the field.
+        finished: Tells whether or not the game is finished.
     """
 
     def __init__(self, clock, display, renderer, ball_handler, counter, field):
-        """Constructor that sets the required objects to run the game.
+        """Sets the required objects to run the game.
 
         Args:
             clock: Clock ticking enables the ball to be animated.
-            field: Field class object that contains the elements of the field.
             display: Pygame display that has its size set already.
+            renderer: Renders all objects on the display.
+            ball_handler: Handles ball movement.
+            counter: Counts the shots
+            field (Field):
+                Contains the elements of the field.
         """
         self.clock = clock
         self.display = display
@@ -27,15 +37,17 @@ class Game:
         self.finished = False
 
     def run(self):
-        """Loop that stops when manually exited or the ball goes to the hole.
+        """Fires up the main game loop.
 
-        Handles all the different event types that have an affect on the game.
-        Calls all the methods required to move the ball etc.
-        Exited variable is used to break out of the loop to prevent errors.
+        Stops when manually exited or the ball goes to the hole.
+        Handles all the different event types that have an affect
+        on the game. Calls all the methods required to move
+        the ball etc. Exited variable is used to break out of
+        the loop to prevent errors.
 
         Raises:
             pygame.error:
-                If pygame encounters an error, the error message is printed and the game quits
+                On error prints the error message and exits.
         """
         exited = False
         while True:

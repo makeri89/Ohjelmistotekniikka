@@ -8,11 +8,11 @@ class Menu:
     """
 
     def __init__(self, start_game, score_table):
-        """A constructor to set the UI root
+        """A constructor to set the UI root.
 
         Args:
-            start_game: The main function to start the game
-            score_table: ScoreViewer class to see score history
+            start_game: The main function to start the game.
+            score_table: ScoreViewer class to see score history.
         """
         self.root = Tk()
         self.start_game = start_game
@@ -27,7 +27,7 @@ class Menu:
         self.root['bg'] = '#99ff99'
 
     def initialize(self):
-        """A method to set the windows elements.
+        """Initializes the tkinter elements.
         """
         label = ttk.Label(master=self.root,
                           text='Play some minigolf',

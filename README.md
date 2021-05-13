@@ -50,12 +50,6 @@ poetry run invoke start
 poetry run invoke start
 ```
 
-#### Tuloshistorian saa tulostettua komennolla
-
-```
-poetry run invoke print-scores
-```
-
 #### Ohjelman testit voi suorittaa komennolla
 
 ```

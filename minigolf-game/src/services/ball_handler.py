@@ -3,24 +3,30 @@ import random
 
 
 class BallHandler:
-    """A class that handles ball movement on the field
+    """A class that handles ball movement on the field.
 
     Attributes:
-        ball: The ball on the field
-        field: The actual field
-        x_dir, y_dir: The direction and distance from the ball to the mouse click location
-        x_float, y_float: Remainder values from the shot distance
-        total_trip, shot_power: Used to calculate the distance the ball has to travel
-        ball_x, ball_y: The coordinates of the ball before each shot
-        hit_ranges: The wall coordinate ranges
-        shot_allowed: A new shot can only be made to a stationary ball
-        velocity: Determines the speed of the ball
-        counter: Used to count the shots
+        ball: The ball on the field.
+        field: The actual field.
+        x_dir:
+            x direction and distance between ball and click position.
+        y_dir:
+            y direction and distance between ball and click position.
+        x_float: Remainder x value from the shot distance.
+        y_float: Remainder y value from the shot distance.
+        total_trip:
+            Used to determine the distance the ball has travelled.
+        shot_power: Used to calculate the total shot distance.
+        ball_x: x coordinate of the ball before each shot
+        ball_y: y coordinate of the ball before each shot.
+        hit_ranges: The wall coordinate ranges.
+        shot_allowed: A new shot can only be made to a stationary ball.
+        velocity: Determines the speed of the ball.
+        counter: Used to count the shots.
     """
 
     def __init__(self, ball, field, walls, counter):
-        """Constructor for the ball handling class that initializes the needed
-        variables for moving the ball.
+        """Initializes the needed variables for moving the ball.
 
         Args:
             ball: The ball at its initial coordinates
@@ -48,6 +54,9 @@ class BallHandler:
         Sets ball speed and shot power.
         The total trip needs to be reset on every shot
         in order to calculate the shot distance.
+
+        Args:
+            click_pos: Mouse coordinates on click.
         """
         if self.shot_allowed:
             self.ball_x, self.ball_y = self.ball.get_coordinates()
@@ -101,11 +110,16 @@ class BallHandler:
         self.water_hit()
         self.wall_hit()
         self.check_light_sand_hits()
+        self.check_dark_sand_hits()
 
     def water_hit(self, test_helper=False):
         """A method to check if the ball is in water.
 
-        If the ball hits water, it is returned to its starting position.
+        If the ball hits water,
+        it is returned to its starting position.
+
+        Args:
+            test_helper: Used for testing the class.
         """
         water_hit = self.field.check_water_hits(test_helper)
         if water_hit:
@@ -119,8 +133,8 @@ class BallHandler:
 
         Checks the outer walls separately.
         The walls inside the field are checked based on the coordinate
-        ranges of the walls. The ranges are modified a bit to take
-        into account the usage of the upper left coordinates of the ball.
+        ranges of the walls. The ranges are modified a bit to take into
+        account the usage of the upper left coordinates of the ball.
         A range of wall is only checked if the direction of the ball
         allows the ball to hit the wall from that direction.
         One cell is 15x15 pixels and the ball is 13x13 pixels.
@@ -209,7 +223,7 @@ class BallHandler:
 
         x_float and y_float values are updated based on the velocity.
         """
-        if self.field.get_dark_sand_hits():
+        if self.field.check_dark_sand_hits():
             self.velocity = 150
             self.total_trip += 5
         else:

@@ -5,11 +5,11 @@ class ScoreRepository:
     """A class to save the scores of each game in a database.
 
     Attributes:
-        connection: A database connection using sqlite3
+        connection: A database connection using sqlite3.
     """
 
     def __init__(self):
-        """A constructor that creates a connection to the database
+        """A constructor that creates a connection to the database.
         """
         self._connection = get_db_connection()
 
@@ -17,7 +17,7 @@ class ScoreRepository:
         """A method to find all saved scores from the database.
 
         Returns:
-            sqlite3 object: An iterable object with the database rows from the query
+            An iterable object of database rows from the query.
         """
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM scores ORDER BY level')
@@ -25,13 +25,13 @@ class ScoreRepository:
         return all_scores
 
     def find_all_by_level(self, level):
-        """A method to find all saved scores from the database on a specific level.
+        """A method to find all saved scores on a specific level.
 
         Args:
-            level (int): Level number
+            level (int): Level number.
 
         Returns:
-            sqlite3 object: An iterable object with the database rows from the query
+            An iterable object of database rows from the query.
         """
         cursor = self._connection.cursor()
         command = 'SELECT * FROM scores WHERE level=? ORDER BY score'
@@ -40,13 +40,13 @@ class ScoreRepository:
         return all_scores_by_level
 
     def find_all_by_player(self, player):
-        """A method to find all scores in the database by a specific player.
+        """A method to find all scores by a specific player.
 
         Args:
-            player (string): The name of the player
+            player (string): The name of the player.
 
         Returns:
-            sqlite3 object: An iterable object with the database rows from the query
+            An iterable object of database rows from the query.
         """
         cursor = self._connection.cursor()
         command = 'SELECT * FROM scores WHERE player=? ORDER BY level'

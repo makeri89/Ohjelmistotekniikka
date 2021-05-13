@@ -35,7 +35,7 @@ def drop_tables(connection):
 def initialize():
     """Initializes the database by creating empty tables.
 
-    Can be used to reset the database also.
+    Can also be used to reset the database.
     """
     connection = get_db_connection()
     drop_tables(connection)

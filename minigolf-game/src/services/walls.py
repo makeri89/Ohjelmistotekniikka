@@ -1,13 +1,12 @@
 class Walls:
-    """A class to get the coordinates for all of the walls in the field.
+    """Gets the coordinates for all of the walls in the field.
 
-        The coordinates are grouped to allow proper collision detection
-        depending on the direction of the ball.
+        The coordinates are grouped to allow proper
+        collision detection depending on the direction of the ball.
     """
 
     def __init__(self, field_map):
-        """A constructor that initializes the dicts needed to store
-        the walls on the field.
+        """Initializes the dicts needed to store the walls.
 
         Calls the methods contact_points and singular_ranges that
         map through the field_map and determine the contact areas
@@ -18,7 +17,8 @@ class Walls:
         """
         self.__field_map = field_map
         self.__walls = {'top': [], 'bottom': [], 'left': [], 'right': []}
-        self.__wall_ranges = {'top': {}, 'bottom': {}, 'left': {}, 'right': {}}
+        self.__wall_ranges = {'top': {}, 'bottom': {},
+                              'left': {}, 'right': {}}
 
         self.contact_points()
         self.singular_ranges()
@@ -73,8 +73,9 @@ class Walls:
         """A method to find all the ranges from a list.
 
         Args:
-            coord_list: List of coordinates for walls
-                        in the field at certain x or y coordinate.
+            coord_list:
+                List of coordinates for walls
+                in the field at certain x or y coordinate.
 
         Returns:
             list: A list of all the ranges as tuples.

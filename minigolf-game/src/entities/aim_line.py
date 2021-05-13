@@ -3,10 +3,14 @@ import pygame
 
 class AimLine:
     """A class to draw a line to help aiming the ball.
+
+    Attributes:
+        line: A pygame line object.
     """
 
     def __init__(self, display):
-        """A constructor that defines the line color and the display for the class.
+        """A constructor that defines the line color
+        and the display for the class.
 
         Args:
             display: Pygame display for the current game
@@ -18,7 +22,8 @@ class AimLine:
     def draw_line(self, start_x, start_y, target):
         """A method to draw the line.
 
-        Adding 6 to the coordinates moves the line to the center of the ball.
+        Adding 6 to the coordinates moves the line to
+        the center of the ball.
 
         Args:
             start_x: Starting x coordinate of the line
