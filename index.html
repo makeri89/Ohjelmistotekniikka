@@ -60,8 +60,6 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#ohjelman-voi-suorittaa-komennolla">Ohjelman voi suorittaa komennolla</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tuloshistorian-saa-tulostettua-komennolla">Tuloshistorian saa tulostettua komennolla</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#ohjelman-testit-voi-suorittaa-komennolla">Ohjelman testit voi suorittaa komennolla</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#testikattavuusraportin-saa-luotua-komennolla">Testikattavuusraportin saa luotua komennolla</a>
@@ -149,7 +147,7 @@
 <ol start="3">
 <li>Ensimmäisellä suorituskerralla alusta tietokanta tulosten tallennusta varten</li>
 </ol>
-<pre><code>poetry run invoke initialize-db
+<pre><code>poetry run invoke build
 </code></pre>
 <ol start="4">
 <li>Käynnistä sovellus komennolla</li>
@@ -159,9 +157,6 @@
 <h2 id="komentorivikomennot">Komentorivikomennot</h2>
 <h3 id="ohjelman-voi-suorittaa-komennolla">Ohjelman voi suorittaa komennolla</h3>
 <pre><code>poetry run invoke start
-</code></pre>
-<h3 id="tuloshistorian-saa-tulostettua-komennolla">Tuloshistorian saa tulostettua komennolla</h3>
-<pre><code>poetry run invoke print-scores
 </code></pre>
 <h3 id="ohjelman-testit-voi-suorittaa-komennolla">Ohjelman testit voi suorittaa komennolla</h3>
 <pre><code>poetry run invoke test
@@ -224,5 +219,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-12 20:25:15.394382+00:00
+Build Date UTC : 2021-05-13 08:22:24.697677+00:00
 -->
