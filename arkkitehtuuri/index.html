@@ -105,14 +105,17 @@
 <p><img alt="Pakkauskaavio" src="../kuvat/luokkakaavio.png" /></p>
 <p>Pakkaus ui sisältää valikkoon liittyvät visuaaliset komponentit, pakkaus services sisältää sovelluslogiikasta huolehtivat komponentit, pakkaus entities taas sisältää pelin sisäiset oliot ja pakkaus repositories sisältää tiedon tallentamisesta vastuussa olevat toiminnallisuudet.</p>
 <h2 id="kayttoliittyma">Käyttöliittymä</h2>
-<p>Peli sisältää kaksi erilaista näkymää:</p>
+<p>Peli sisältää neljä erilaista näkymää:</p>
 <ul>
 <li>Aloitusvalikko</li>
 <li>Peli</li>
+<li>Pelin loppunäyttö</li>
+<li>Tuloshistoria</li>
 </ul>
 <p>Aloitusvalikosta voi asettaa itselleen nimimerkin, valita tason ja pallon värin sekä aloittaa uuden pelin. Valikko on toteutettu omana <code>Menu</code> -luokkanaan.</p>
 <p>Pelinäkymässä lyödään minigolfille ominaiseen tapaan palloa reikään. Pelinäkymä rakentuu useasta luokasta, joista osa vastaa pelin logiikasta ja osa pygamen visuaalisista elementeistä. Pelin suorittamisesta vastaa pääasiassa <code>Game</code> -luokka, joka kutsuu muiden luokkien metodeita pelin tapahtumien perusteella.</p>
-<p>Peliin voidaan vielä lisätä visuaalinen käyttöliittymä tulosten tarkastelua varten.</p>
+<p>Onnistuuneen pelisuorituksen jälkeen näytetään itsestään sulkeutuva loppunäyttö, joka kertoo pelin tuloksen. Loppunäyttö on toteutettu pygamella <code>EndScreen</code> -luokassa.</p>
+<p>Pelin aloitusvalikosta voi avata myös oman ikkunan tulosten tarkastelua varten. Tuloksia voi suodattaa joko pelaajan tai kentän mukaan. Tulosten näyttämisestä vastaava <code>ScoreViewer</code> -luokka hyödyntää <code>ScoreRepository</code> -luokan metodeja päästäkseen käsiksi tuloksiin tietokannassa.</p>
 <h2 id="tietojen-tallentaminen">Tietojen tallentaminen</h2>
 <p><code>ScoreRepository</code> -luokka huolehtii tietojen tallentamisesta SQLite-tietokantaan. Tietokantaan tallennetaan jokaisen pelatun pelin jälkeen pelaajan nimi, tulos ja kentän numero.</p>
 <h3 id="tietokanta">Tietokanta</h3>
@@ -122,7 +125,7 @@
 <thead>
 <tr>
 <th align="center">level</th>
-<th align="center"> player</th>
+<th align="center">player</th>
 <th align="center"> score</th>
 </tr>
 </thead>
@@ -134,7 +137,7 @@
 </tr>
 <tr>
 <td align="center">2</td>
-<td align="center"> makeri</td>
+<td align="center">makeri</td>
 <td align="center">5</td>
 </tr>
 </tbody>
@@ -146,6 +149,13 @@
 <p><img alt="Sekvenssikaavio" src="../kuvat/playing_sd.png" /></p>
 <p>Kun pelaaja painaa <code>Start new game</code> -painiketta, kutsutaan <code>main</code>-funktiota annetuilla tiedoilla pelaajan nimestä, tasosta ja pallon väristä. <code>main</code>-funktio luo uuden <code>Game</code> -luokan olion, jonka sisällä luodaan pelin pelaamiseen vaadittavat oliot. <code>Game</code> tarkistaa jatkuvasti, onko pallo päätynyt reikään eli onko peli päättynyt. Kun peli päättyy, se kutsuu <code>ScoreRepository</code> -luokan metodia <code>add_score</code>, joka tallentaa pelin tuloksen tietokantaan. Peli palaa takaisin aloitusvalikkoon.</p>
 <p>Kuvausta on selkeytetty jättämällä kaaviosta pois useimpien Game-luokan käyttämien olioiden luominen.</p>
+<h3 id="tulosten-tarkastelu">Tulosten tarkastelu</h3>
+<p>Kun pelaaja aloitusvalikossa painaa <code>View score history</code> -painiketta ja valitsee avautuvassa ikkunassa tulosten suodatuksen tasoon 2, etenee sovelluksen toiminta seuraavasti:</p>
+<p><img alt="Tulossekvenssikaavio" src="../kuvat/scorehistory.png" /></p>
+<p><code>View score history</code> -painiketta painettaessa kutsutaan <code>score_table.py</code> -tiedoston <code>open_table</code> -funktiota, joka luo uuden ikkunan tuloshistorialle <code>ScoreViewer</code> -luokalla. Oletuksena haetaan ensin kaikki tulokset tietokannasta ja näytetään ne käyttäjälle. Kun käyttäjä antaa jonkin suodatuskriteerin, tyhjennetään näyttö ja haetaan siihen uudet tiedot tietokannasta suodattimen perusteella käyttäen <code>ScoreRepository</code> -luokan metodeita.</p>
+<h2 id="rakenteeseen-jaaneet-heikkoudet">Rakenteeseen jääneet heikkoudet</h2>
+<p>Luokissa <code>ScoreViewer</code> ja <code>Menu</code> on hieman toisteista koodia TkInter-komponenttien tyylin määrittelyssä. Tämän voisi mahdollisesti korjata määrittelemällä erillisen TkInter-tyylin, jonka antaisi komponenteille. Myös pylint ilmoittaa tästä toisteisuudesta.</p>
+<p>Muutamissa luokissa on myös turhan paljon attribuutteja, näistäkin pylint ilmoittaa. Kyseisiä luokkia olisi kenties hyvä jakaa useampaan luokkaan niiden selkiyttämiseksi, mutta toisaalta se kenties jakaisi osittain turhaan samaa toiminnallisuutta useampaan luokkaan.</p>
               
             </div>
           </div>
