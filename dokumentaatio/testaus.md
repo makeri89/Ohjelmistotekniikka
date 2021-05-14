@@ -24,7 +24,7 @@ Tietojen pysyväistallennuksesta vastaavaa `ScoreRepository` -luokkaa testataan 
 
 ## Testauskattavuus
 
-Testien haarautumakattavuus on 76%.
+Testien haarautumakattavuus on 75%.
 
 ![Coverage](./kuvat/coveragereport.png)
 

@@ -4,8 +4,7 @@ from ui.score import Score
 
 
 class Renderer:
-    """A class to handle rendering in pygame.
-    """
+    """A class to handle rendering in pygame."""
 
     def __init__(self, display, field, ball, aim_line):
         """A constuctor that sets the pygame display and the field.
@@ -34,8 +33,7 @@ class Renderer:
         pygame.display.update()
 
     def draw_aim(self):
-        """A method to draw the aiming line.
-        """
+        """A method to draw the aiming line."""
         mouse_pos = pygame.mouse.get_pos()
         current_x, current_y = self._ball.rect.x, self._ball.rect.y
         self._aim_line.draw_line(current_x, current_y, mouse_pos)

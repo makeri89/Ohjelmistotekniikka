@@ -2,8 +2,7 @@ from tkinter import Tk, ttk, Canvas, StringVar, OptionMenu, Button, CENTER
 
 
 class ScoreViewer:
-    """A class to display the score history.
-    """
+    """A class to display the score history."""
 
     def __init__(self, score_repository, levels):
         """Initializes the tkinter window.
@@ -57,10 +56,10 @@ class ScoreViewer:
             empty_label.grid(row=row, pady=20, columnspan=3)
             row += 1
         else:
-            for i in range(len(scores)):
-                for j in range(len(scores[0])):
+            for i, datarow in enumerate(scores):
+                for j, value in enumerate(datarow):
                     label = ttk.Label(self._canvas,
-                                      text=scores[i][j],
+                                      text=value,
                                       background='#99ff99',
                                       padding=3,
                                       justify=CENTER)
@@ -108,27 +107,32 @@ class ScoreViewer:
         button.grid(row=row, column=0, pady=10)
 
     def clear(self):
-        """Clears the canvas but does not affect the root window.
-        """
+        """Clears the canvas but does not affect the root window."""
         self._canvas.destroy()
 
     def reset(self):
-        """Resets the view to show all scores.
-        """
+        """Resets the view to show all scores."""
         self.clear()
         self.add_items(self._score_repository.find_all())
 
     def filter_by_name(self):
+        """Filters the results by name.
+
+        Clears the current view first.
+        """
         name = self._name_entry.get()
         self.clear()
         self.add_items(self._score_repository.find_all_by_player(name))
 
     def filter_by_level(self):
+        """Filters the results by level.
+
+        Clears the current view first.
+        """
         self.clear()
         level = self._level.get()
         self.add_items(self._score_repository.find_all_by_level(level))
 
     def fire_up(self):
-        """Starts the tkinter Tk mainloop to display the window.
-        """
+        """Starts the tkinter Tk mainloop to display the window."""
         self._root.mainloop()

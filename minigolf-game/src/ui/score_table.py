@@ -4,8 +4,7 @@ from levels.field_importer import get_keys
 
 
 def open_table():
-    """Sets up a ScoreViewer class object when called.
-    """
+    """Sets up a ScoreViewer class object when called."""
     score_repository = ScoreRepository()
     score_viewer = ScoreViewer(score_repository, get_keys())
     score_viewer.fire_up()

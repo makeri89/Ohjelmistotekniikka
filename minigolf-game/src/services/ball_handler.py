@@ -162,8 +162,7 @@ class BallHandler:
                     self.switch_y_direction(ball_x, ranges)
 
     def check_outer_walls(self, ball_x, ball_y):
-        """A method to manually check if the ball hits the outer walls.
-        """
+        """Manually checks if the ball hits the outer walls."""
         height, width = self.field.get_dimensions()
 
         if ball_x <= 15 and self.x_dir < 0:

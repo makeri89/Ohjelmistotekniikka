@@ -2,8 +2,7 @@ import pygame
 
 
 class Score:
-    """A class to show the current score during a game.
-    """
+    """A class to show the current score during a game."""
 
     def __init__(self, display):
         """Initializes a pygame font for the score.

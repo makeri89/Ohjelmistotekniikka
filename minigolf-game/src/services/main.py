@@ -36,6 +36,10 @@ def main(name='Player 1', level=4, ball_color='blue'):
     height = len(field_map)
     width = len(field_map[0])
 
+    # TkInter passes an empty string as name if name is not given
+    if name == '':
+        name = 'Player 1'
+
     pygame.init()
 
     pygame.display.set_caption(f'{name} is now playing')

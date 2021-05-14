@@ -4,12 +4,10 @@ import pygame
 
 
 class EndScreen:
-    """A class to display information after a game is played.
-    """
+    """A class to display information after a game is played."""
 
     def __init__(self):
-        """Sets a new pygame display and fonts.
-        """
+        """Sets a new pygame display and fonts."""
         pygame.init()
         self._display = pygame.display.set_mode((600, 250))
         self._display.fill((153, 255, 153))

@@ -31,8 +31,7 @@ class Menu:
         self._root['bg'] = '#99ff99'
 
     def initialize(self):
-        """Initializes the tkinter elements.
-        """
+        """Initializes the tkinter elements."""
         label = ttk.Label(master=self._root,
                           text='Play some minigolf',
                           background='#408040',
@@ -103,13 +102,11 @@ class Menu:
         table_button.grid(row=4, column=0, padx=10)
 
     def handle_click(self):
-        """Starts the game when called.
-        """
+        """Starts the game when called."""
         self.start_game(self._entry.get(), self._level.get(),
                         self._ball_color.get())
 
     def run(self):
-        """Starts the tkinter menu.
-        """
+        """Starts the tkinter menu."""
         self.initialize()
         self._root.mainloop()

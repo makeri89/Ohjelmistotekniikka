@@ -5,7 +5,7 @@ dirname = os.path.dirname(__file__)
 
 try:
     load_dotenv(dotenv_path=os.path.join(dirname, '..', '.env'))
-except:
+except FileNotFoundError:
     print('The .env file not found :(')
 
 DB_PATH = os.getenv("DB")
