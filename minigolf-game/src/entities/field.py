@@ -43,7 +43,7 @@ class Field:
         self._light_sand = pygame.sprite.Group()
         self._dark_sand = pygame.sprite.Group()
         self._all_elements = pygame.sprite.Group()
-        self._ball = None
+        self._ball = Ball(15, 15, ball_color)
         self.__ball_color = ball_color
 
         self.place_elements(field_map)
@@ -125,7 +125,6 @@ class Field:
         in_hole = pygame.sprite.spritecollide(
             self._ball, self._holes, False, pygame.sprite.collide_circle_ratio(0.3))
         if in_hole:
-            print('you won')
             return True
         return False
 

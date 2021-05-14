@@ -24,6 +24,7 @@
 | 10.5. |  1h  | Lisätty MkDocs                                                                                           |
 | 10.5. |  2h  | Lisää testejä sekä testausdokumettia aloitettu                                                           |
 | 12.5. |  5h  | Lisätty graafinen käyttöliittymä tuloshistorian tarkasteluun                                             |
-| 13.5. |   1h | Docstringien läpikäynti                                                                                  |
+| 13.5. |  1h  | Docstringien läpikäynti                                                                                  |
+| 14.5. |  1h  | Dokumentaation viimeistelyä                                                                              |
 |       |      |                                                                                                          |
-| Yht.  | 71h  |                                                                                                          |
+| Yht.  | 72h  |                                                                                                          |

@@ -6,13 +6,13 @@ class Score:
     """
 
     def __init__(self, display):
-        """Initializes a pygame font for the score. 
+        """Initializes a pygame font for the score.
 
         Args:
             display: The current pygame display for the game.
         """
-        self.display = display
-        self.font = pygame.font.SysFont('Arial', 18)
+        self._display = display
+        self._font = pygame.font.SysFont('Arial', 18)
 
     def draw_score(self, score):
         """Draws the score on the display.
@@ -20,5 +20,5 @@ class Score:
         Args:
             score: The current score.
         """
-        text = self.font.render(str(score) + ' shots', True, (255, 0, 0))
-        self.display.blit(text, (15, 15))
+        text = self._font.render(str(score) + ' shots', True, (255, 0, 0))
+        self._display.blit(text, (15, 15))

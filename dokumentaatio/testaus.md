@@ -24,18 +24,20 @@ Tietojen pysyväistallennuksesta vastaavaa `ScoreRepository` -luokkaa testataan 
 
 ## Testauskattavuus
 
-Testien haarautumakattavuus on 79%.
+Testien haarautumakattavuus on 76%.
 
-TODO: kuva coverage raportista
+![Coverage](./kuvat/coveragereport.png)
 
-Testien ulkopuolelle on jäänyt `Game` -luokka, joka ainoastaan pyörittää pygamen tapahtumia.
+Testien ulkopuolelle on jäänyt `Game` -luokka, joka ainoastaan pyörittää pygamen tapahtumia sekä `main` -funktio, joka alustaa pygamen peliä varten sekä hoitaa pelin päättymisen jälkeiset tapahtumat.
 
 ## Järjestelmätestaus
 
-Sovellusta on testattu järjestelmätasolla manuaalisesti
+Sovellusta on testattu järjestelmätasolla manuaalisesti.
 
 ### Asennus ja konfigurointi
 
 Pelin käyttöä on testattu sekä omalla koneella, jossa on käytössä Ubuntu 20.04 että yliopiston virtuaalikoneella asentamalla se käyttöohjeen kuvaamalla tavalla.
 
 Pelin toimintaa on testattu erilaisilla syötteillä ja valinnoilla valikossa sekä erilaisilla lyöntikohdilla ja lyöntimäärillä pelissä. On myös testattu erilaisilla tietokantojen nimillä.
+
+Sovelluksen kaatavia bugeja ei ole löytynyt, mutta itse pelissä pallon liikeestä löytyy useampia poikkeavuuksia odotettuun verrattuna. Nämä ovat kuitenkin suhteellisen harvinaisia, eivätkä estä pelin pelaamista millään tapaa.
